@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+        用户名: <input [class.isvalid]="isFieldInvalidTouched('username')" formControlName="username" type="text">
+    </p>
+    <p>
+        密码: <input [class.isvalid]="isFieldInvalidTouched('password')" formControlName="password" type="text">
+    </p>
+    <button type="submit">提交</button>
+</form>
