@@ -25,7 +25,7 @@ export class StringTemplateOutletDirective {
 
     updateView(): void {
         if (!this.isTemplate) {
-            /** use default template when input is string **/
+            // use default template when input is string
             if (!this.defaultViewRef) {
                 this.viewContainer.clear();
                 this.inputViewRef = null;
@@ -34,7 +34,7 @@ export class StringTemplateOutletDirective {
                 }
             }
         } else {
-            /** use input template when input is templateRef **/
+            // use input template when input is templateRef
             if (!this.inputViewRef) {
                 this.viewContainer.clear();
                 this.defaultViewRef = null;

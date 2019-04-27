@@ -39,7 +39,7 @@ export class ScrollService {
             top: 0,
             left: 0
         };
-        if (!el || !el.getClientRects().length) return ret;
+        if (!el || !el.getClientRects().length) { return ret; }
 
         const rect = el.getBoundingClientRect();
         if (rect.width || rect.height) {
@@ -92,7 +92,7 @@ export class ScrollService {
             if (time < 450) {
                 reqAnimFrame(frameFunc);
             } else {
-                if (callback) callback();
+                if (callback) { callback(); }
             }
         };
         reqAnimFrame(frameFunc);

@@ -37,7 +37,7 @@ export class FromComponent implements OnInit {
           }
         });
       }
-       
+
       isFieldInvalidTouched(field: any) {
         return this.form.get(field).invalid && this.form.get(field).touched;
       }

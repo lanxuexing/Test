@@ -4,7 +4,7 @@ import { Directive, Input, Renderer2, ElementRef, HostListener } from '@angular/
     selector: '[appChangeBackground]'
 })
 export class ChangeBackGroundDirective {
-    _defaultColor = 'yellow';
+    defaultColor = 'yellow';
 
     @Input() backgroundColor: string;
 
@@ -12,13 +12,13 @@ export class ChangeBackGroundDirective {
         private el: ElementRef,
         private render: Renderer2
     ) {
-        this.setStyle(this._defaultColor);
+        this.setStyle(this.defaultColor);
     }
 
     @HostListener('click')
     onclick() {
         // console.log('哈哈哈哈');
-        this.setStyle(this.backgroundColor || this._defaultColor);
+        this.setStyle(this.backgroundColor || this.defaultColor);
     }
 
     setStyle(color: string) {

@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Tooltip } from './tooltip.component';
 
-export function getWindow(): any { return window }
+export function getWindow(): any { return window; }
 
 @NgModule({
   declarations: [Tooltip],
@@ -13,6 +13,7 @@ export function getWindow(): any { return window }
 export class TooltipModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: TooltipModule, providers: []}
+      ngModule: TooltipModule, providers: []
+    };
   }
 }
