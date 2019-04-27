@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ShareComponent } from './share.component';
 import { FromComponent } from './from/from.component';
+import { ShareComponent } from './share.component';
 import { TooltipDemoComponent } from './tooltip/demo.component';
 
 const routes: Routes = [

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { RxjsService } from './rxjs.service';
 import { Observable } from 'rxjs';
-import { Hero } from './in-memory-data.service';
-import { map, filter } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
+import { Hero } from '../core/memory/in-memory-data.service';
+import { RxjsService } from './rxjs.service';
 
 @Component({
     selector: 'app-share-replay',
     template: `
         <h3>this is share-replay component!</h3>
         <button (click)="btnClick()">点我获取英雄</button>
+        <app-back></app-back>
     `,
     styleUrls: ['./rxjs.scss']
 })

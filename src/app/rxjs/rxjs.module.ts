@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CoreModule } from '../core/core.module';
 import { RxjsHomeComponent } from './rxjs-home.component';
 import { RxjsRoutingModule } from './rxjs.routing';
 import { RxjsService } from './rxjs.service';
@@ -12,7 +13,7 @@ const COMMON = [
 
 @NgModule({
     declarations: [ ...COMMON ],
-    imports: [ CommonModule, RxjsRoutingModule ],
+    imports: [ CommonModule, RxjsRoutingModule, CoreModule ],
     exports: [...COMMON ],
     providers: [ RxjsService ],
 })

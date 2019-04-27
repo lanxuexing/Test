@@ -18,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
                 </ng-template>
             </app-tooltip>
         </div>
+        <app-back></app-back>
     `,
     styles: [`
         .container {
