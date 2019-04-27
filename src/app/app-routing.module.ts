@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: '/rxjs', pathMatch: 'full' },
   { path: 'rxjs', loadChildren: './rxjs/rxjs.module#RxjsModule' },
+  { path: 'components', loadChildren: './component/share.module#ShareModule' },
 ];
 
 @NgModule({

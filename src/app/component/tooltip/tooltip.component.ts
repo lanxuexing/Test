@@ -73,11 +73,8 @@ export class Tooltip implements AfterContentInit {
 
   setPopoerPositionAndShow(): void {
     const { tipElement, position } = this.cache;
-    console.log('缓存信息', this.cache);
     const arrowElement: Element = tipElement.querySelector('.popper__arrow');
     this.xPlacement = position.arrowFace;
-    console.log(position);
-    console.log(this.tipElementShape);
     this.renderer.setStyle(tipElement, 'left', `${position.left}px`);
     this.renderer.setStyle(tipElement, 'top', `${position.top}px`);
 
