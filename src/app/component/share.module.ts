@@ -8,14 +8,17 @@ import { ShareRoutingModule } from './share.routing';
 import { ShareService } from './share.service';
 import { TooltipDemoComponent } from './tooltip/demo.component';
 import { TooltipModule } from './tooltip/tooltip.module';
-import { MultiSelectDropDownModule } from './multiselect-dropdown';
+import { MultiSelectDropDownModule } from './multiselect-dropdown/multiselect-dropdown.module';
 import { MultiselectDropdownDemoComponent } from './multiselect-dropdown/demo.component';
+import { NzProgressModule } from './progress/progress.module';
+import { ProgressDemoComponent } from './progress/demo.component';
 
 const COMMON = [
     ShareComponent,
     FromComponent,
     TooltipDemoComponent,
     MultiselectDropdownDemoComponent,
+    ProgressDemoComponent,
 ];
 
 @NgModule({
@@ -28,6 +31,7 @@ const COMMON = [
         TooltipModule.forRoot(),
         CoreModule,
         MultiSelectDropDownModule.forRoot(),
+        NzProgressModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

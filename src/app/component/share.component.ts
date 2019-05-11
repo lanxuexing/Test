@@ -20,6 +20,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">03</span>Multiselect-Dropdown
                 </a>
             </li>
+            <li>
+                <a routerLink="./progress">
+                    <span class="badge">03</span>Progress
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']
