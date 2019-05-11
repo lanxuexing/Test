@@ -8,16 +8,27 @@ import { ShareRoutingModule } from './share.routing';
 import { ShareService } from './share.service';
 import { TooltipDemoComponent } from './tooltip/demo.component';
 import { TooltipModule } from './tooltip/tooltip.module';
+import { MultiSelectDropDownModule } from './multiselect-dropdown';
+import { MultiselectDropdownDemoComponent } from './multiselect-dropdown/demo.component';
 
 const COMMON = [
     ShareComponent,
     FromComponent,
     TooltipDemoComponent,
+    MultiselectDropdownDemoComponent,
 ];
 
 @NgModule({
     declarations: [...COMMON],
-    imports: [CommonModule, ShareRoutingModule, FormsModule, ReactiveFormsModule, TooltipModule.forRoot(), CoreModule],
+    imports: [
+        CommonModule,
+        ShareRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        TooltipModule.forRoot(),
+        CoreModule,
+        MultiSelectDropDownModule.forRoot(),
+    ],
     exports: [...COMMON],
     providers: [ShareService],
 })

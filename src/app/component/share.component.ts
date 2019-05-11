@@ -15,6 +15,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">02</span>Tooltip
                 </a>
             </li>
+            <li>
+                <a routerLink="./multiselect-dropdown">
+                    <span class="badge">03</span>Multiselect-Dropdown
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']
