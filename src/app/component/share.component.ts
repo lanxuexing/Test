@@ -25,6 +25,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">03</span>Progress
                 </a>
             </li>
+            <li>
+                <a routerLink="./carousel">
+                    <span class="badge">03</span>Carousel
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']

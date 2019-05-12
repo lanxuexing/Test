@@ -12,6 +12,8 @@ import { MultiSelectDropDownModule } from './multiselect-dropdown/multiselect-dr
 import { MultiselectDropdownDemoComponent } from './multiselect-dropdown/demo.component';
 import { NzProgressModule } from './progress/progress.module';
 import { ProgressDemoComponent } from './progress/demo.component';
+import { NzCarouselModule } from './carousel/ncarousel.module';
+import { CarouselDemoComponent } from './carousel/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -19,6 +21,7 @@ const COMMON = [
     TooltipDemoComponent,
     MultiselectDropdownDemoComponent,
     ProgressDemoComponent,
+    CarouselDemoComponent,
 ];
 
 @NgModule({
@@ -32,6 +35,7 @@ const COMMON = [
         CoreModule,
         MultiSelectDropDownModule.forRoot(),
         NzProgressModule.forRoot(),
+        NzCarouselModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

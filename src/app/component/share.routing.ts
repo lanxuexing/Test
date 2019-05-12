@@ -6,6 +6,7 @@ import { ShareComponent } from './share.component';
 import { TooltipDemoComponent } from './tooltip/demo.component';
 import { MultiselectDropdownDemoComponent } from './multiselect-dropdown/demo.component';
 import { ProgressDemoComponent } from './progress/demo.component';
+import { CarouselDemoComponent } from './carousel/demo.component';
 
 const routes: Routes = [
     { path: '', component: ShareComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'tooltip', component: TooltipDemoComponent },
     { path: 'multiselect-dropdown', component: MultiselectDropdownDemoComponent },
     { path: 'progress', component: ProgressDemoComponent },
+    { path: 'carousel', component: CarouselDemoComponent },
 ];
 
 @NgModule({
