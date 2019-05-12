@@ -9,6 +9,7 @@ import { ProgressDemoComponent } from './progress/demo.component';
 import { CarouselDemoComponent } from './carousel/demo.component';
 import { DividerDemoComponent } from './divider/demo.component';
 import { BackTopDemoComponent } from './back-top/demo.component';
+import { CardDemoComponent } from './card/demo.component';
 
 const routes: Routes = [
     { path: '', component: ShareComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'carousel', component: CarouselDemoComponent },
     { path: 'divider', component: DividerDemoComponent },
     { path: 'back-top', component: BackTopDemoComponent },
+    { path: 'card', component: CardDemoComponent },
 ];
 
 @NgModule({
