@@ -20,6 +20,8 @@ import { NzBackTopModule } from './back-top/back-top.module';
 import { BackTopDemoComponent } from './back-top/demo.component';
 import { CardDemoComponent } from './card/demo.component';
 import { NzCardModule } from './card/card.module';
+import { NzTabsModule } from './tabs/tabs.module';
+import { TabsDemoComponent } from './tabs/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -31,6 +33,7 @@ const COMMON = [
     DividerDemoComponent,
     BackTopDemoComponent,
     CardDemoComponent,
+    TabsDemoComponent,
 ];
 
 @NgModule({
@@ -48,6 +51,7 @@ const COMMON = [
         NzDividerModule.forRoot(),
         NzBackTopModule.forRoot(),
         NzCardModule.forRoot(),
+        NzTabsModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

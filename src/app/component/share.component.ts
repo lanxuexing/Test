@@ -45,6 +45,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">08</span>Card
                 </a>
             </li>
+            <li>
+                <a routerLink="./tabs">
+                    <span class="badge">09</span>Tabs
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']
