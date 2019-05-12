@@ -16,6 +16,8 @@ import { NzCarouselModule } from './carousel/carousel.module';
 import { CarouselDemoComponent } from './carousel/demo.component';
 import { DividerDemoComponent } from './divider/demo.component';
 import { NzDividerModule } from './divider/divider.module';
+import { NzBackTopModule } from './back-top/back-top.module';
+import { BackTopDemoComponent } from './back-top/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -25,6 +27,7 @@ const COMMON = [
     ProgressDemoComponent,
     CarouselDemoComponent,
     DividerDemoComponent,
+    BackTopDemoComponent,
 ];
 
 @NgModule({
@@ -40,6 +43,7 @@ const COMMON = [
         NzProgressModule.forRoot(),
         NzCarouselModule.forRoot(),
         NzDividerModule.forRoot(),
+        NzBackTopModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],
