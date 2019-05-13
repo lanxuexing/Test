@@ -1,0 +1,52 @@
+import { getLocaleNumberSymbol, NumberSymbol } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  Input,
+  LOCALE_ID,
+  OnChanges,
+  TemplateRef,
+  ViewEncapsulation
+} from '@angular/core';
+import { NzStatisticValueType } from './statistic-definitions';
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  preserveWhitespaces: false,
+  // tslint:disable-next-line:component-selector
+  selector: 'nz-statistic-number',
+  exportAs: 'nzStatisticNumber',
+  templateUrl: './statistic-number.component.html',
+  // tslint:disable-next-line:use-host-property-decorator
+  host: {
+    class: 'ant-statistic-content-value'
+  },
+  styles: ['nz-number { display: inline }'],
+  styleUrls: ['./statistic.component.less']
+})
+export class NzStatisticNumberComponent implements OnChanges {
+  @Input() nzValue: NzStatisticValueType;
+  @Input() nzValueTemplate: TemplateRef<{ $implicit: NzStatisticValueType }>;
+
+  displayInt = '';
+  displayDecimal = '';
+
+  // tslint:disable-next-line:variable-name
+  constructor(@Inject(LOCALE_ID) private locale_id: string) {}
+
+  ngOnChanges(): void {
+    this.formatNumber();
+  }
+
+  private formatNumber(): void {
+    const decimalSeparator: string =
+      typeof this.nzValue === 'number' ? '.' : getLocaleNumberSymbol(this.locale_id, NumberSymbol.Decimal);
+    const value = String(this.nzValue);
+    const [int, decimal] = value.split(decimalSeparator);
+
+    this.displayInt = int;
+    this.displayDecimal = decimal ? `${decimalSeparator}${decimal}` : '';
+  }
+}
