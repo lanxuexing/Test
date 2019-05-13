@@ -24,6 +24,8 @@ import { NzTabsModule } from './tabs/tabs.module';
 import { TabsDemoComponent, NzDemoTabContentLazyComponent, NzDemoTabContentEagerlyComponent } from './tabs/demo.component';
 import { StatisticDemoComponent } from './statistic/demo.component';
 import { NzStatisticModule } from './statistic/statistic.module';
+import { NzAffixModule } from './affix/affix.module';
+import { AffixDemoComponent } from './affix/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -39,6 +41,7 @@ const COMMON = [
     NzDemoTabContentLazyComponent,
     NzDemoTabContentEagerlyComponent,
     StatisticDemoComponent,
+    AffixDemoComponent,
 ];
 
 @NgModule({
@@ -58,6 +61,7 @@ const COMMON = [
         NzCardModule.forRoot(),
         NzTabsModule.forRoot(),
         NzStatisticModule.forRoot(),
+        NzAffixModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

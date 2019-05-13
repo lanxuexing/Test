@@ -12,6 +12,7 @@ import { BackTopDemoComponent } from './back-top/demo.component';
 import { CardDemoComponent } from './card/demo.component';
 import { TabsDemoComponent } from './tabs/demo.component';
 import { StatisticDemoComponent } from './statistic/demo.component';
+import { AffixDemoComponent } from './affix/demo.component';
 
 const routes: Routes = [
     { path: '', component: ShareComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'card', component: CardDemoComponent },
     { path: 'tabs', component: TabsDemoComponent },
     { path: 'statistic', component: StatisticDemoComponent },
+    { path: 'affix', component: AffixDemoComponent },
 ];
 
 @NgModule({

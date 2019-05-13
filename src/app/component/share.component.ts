@@ -55,6 +55,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">10</span>Statistic
                 </a>
             </li>
+            <li>
+                <a routerLink="./affix">
+                    <span class="badge">11</span>Affix
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']
