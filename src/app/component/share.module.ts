@@ -21,7 +21,7 @@ import { BackTopDemoComponent } from './back-top/demo.component';
 import { CardDemoComponent } from './card/demo.component';
 import { NzCardModule } from './card/card.module';
 import { NzTabsModule } from './tabs/tabs.module';
-import { TabsDemoComponent } from './tabs/demo.component';
+import { TabsDemoComponent, NzDemoTabContentLazyComponent, NzDemoTabContentEagerlyComponent } from './tabs/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -34,6 +34,8 @@ const COMMON = [
     BackTopDemoComponent,
     CardDemoComponent,
     TabsDemoComponent,
+    NzDemoTabContentLazyComponent,
+    NzDemoTabContentEagerlyComponent,
 ];
 
 @NgModule({
