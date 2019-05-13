@@ -10,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
                     <h4>ShareReplay</h4>
                 </div>
             </a>
+            <a class="col-1-4" routerLink="./study">
+                <div class="module hero">
+                    <h4>RxjsDemo</h4>
+                </div>
+            </a>
         </div>
     `,
     styleUrls: ['./rxjs.scss']

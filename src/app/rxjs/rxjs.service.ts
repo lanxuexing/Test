@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, shareReplay } from 'rxjs/operators';
 import { Hero } from '../core/memory/in-memory-data.service';
 
 const httpOptions = {
@@ -22,7 +22,7 @@ export class RxjsService {
             .pipe(
                 tap(_ => this.log('fetched heroes')),
                 catchError(this.handleError<Hero[]>('getHeroes', [])),
-                // shareReplay()
+                shareReplay()
             );
     }
 
