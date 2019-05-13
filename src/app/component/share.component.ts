@@ -15,6 +15,41 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">02</span>Tooltip
                 </a>
             </li>
+            <li>
+                <a routerLink="./multiselect-dropdown">
+                    <span class="badge">03</span>Multiselect-Dropdown
+                </a>
+            </li>
+            <li>
+                <a routerLink="./progress">
+                    <span class="badge">04</span>Progress
+                </a>
+            </li>
+            <li>
+                <a routerLink="./carousel">
+                    <span class="badge">05</span>Carousel
+                </a>
+            </li>
+            <li>
+                <a routerLink="./divider">
+                    <span class="badge">06</span>Divider
+                </a>
+            </li>
+            <li>
+                <a routerLink="./back-top">
+                    <span class="badge">07</span>Back-Top
+                </a>
+            </li>
+            <li>
+                <a routerLink="./card">
+                    <span class="badge">08</span>Card
+                </a>
+            </li>
+            <li>
+                <a routerLink="./tabs">
+                    <span class="badge">09</span>Tabs
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']

@@ -1,0 +1,187 @@
+.ant-progress {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: fade(#000, 65%);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  display: inline-block;
+
+  &-line {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &-small&-line,
+  &-small&-line &-text .anticon {
+    font-size: 12px;
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &-outer {
+    display: inline-block;
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    .ant-progress-show-info & {
+      margin-right: calc(-2em - 8px);
+      padding-right: calc(2em + 8px);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    background-color: hsv(0, 0, 96%);
+    border-radius: 100px;
+  }
+
+  &-circle-trail {
+    stroke: hsv(0, 0, 96%);
+  }
+
+  &-circle-path {
+    animation: ant-progress-appear 0.3s;
+    stroke: #1890ff;
+  }
+
+  &-success-bg,
+  &-bg {
+    position: relative;
+    background-color: #1890ff;
+    transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
+  }
+
+  &-success-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #52c41a;
+  }
+
+  &-text {
+    display: inline-block;
+    width: 2em;
+    margin-left: 8px;
+    color: fade(#000, 45%);
+    font-size: 1em;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+    word-break: normal;
+    .anticon {
+      font-size: 14px;
+    }
+  }
+
+  &-status-active {
+    .ant-progress-bg::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      opacity: 0;
+      animation: ant-progress-active 2.4s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+      content: '';
+    }
+  }
+
+  &-status-exception {
+    .ant-progress-bg {
+      background-color: #f5222d;
+    }
+    .ant-progress-text {
+      color: #f5222d;
+      .ant-progress-icon {
+        font-style: normal;
+      }
+    }
+    .ant-progress-circle-path {
+      stroke: #f5222d;
+    }
+  }
+
+  &-status-success {
+    .ant-progress-bg {
+      background-color: #52c41a;
+    }
+    .ant-progress-text {
+      color: #52c41a;
+      .ant-progress-icon {
+        font-style: normal;
+      }
+    }
+    .ant-progress-circle-path {
+      stroke: #52c41a;
+    }
+  }
+
+  &-circle &-inner {
+    position: relative;
+    line-height: 1;
+    background-color: transparent;
+  }
+
+  &-circle &-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: fade(#000, 65%);
+    line-height: 1;
+    white-space: normal;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    .anticon {
+      font-size: 14 / 12em;
+    }
+  }
+
+  &-circle&-status-exception {
+    .ant-progress-text {
+      color: #f5222d;
+      .ant-progress-icon {
+        font-style: normal;
+      }
+    }
+  }
+  &-circle&-status-success {
+    .ant-progress-text {
+      color: #52c41a;
+      .ant-progress-icon {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+@keyframes ant-progress-active {
+  0% {
+    width: 0;
+    opacity: 0.1;
+  }
+  20% {
+    width: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
