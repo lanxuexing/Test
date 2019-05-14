@@ -60,6 +60,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">11</span>Affix
                 </a>
             </li>
+            <li>
+                <a routerLink="./pagination">
+                    <span class="badge">12</span>Pagination
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']

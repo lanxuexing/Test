@@ -1,0 +1,371 @@
+.ant-pagination {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: fade(#000, 65%);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  font-feature-settings: 'tnum';
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &::after {
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    content: ' ';
+  }
+
+  &-total-text {
+    display: inline-block;
+    height: 32px;
+    margin-right: 8px;
+    line-height: 30px;
+    vertical-align: middle;
+  }
+
+  &-item {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    font-family: Arial;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid hsv(0, 0, 85%);
+    border-radius: 4px;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+
+    a {
+      margin: 0 6px;
+      color: fade(#000, 65%);
+      transition: none;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: #1890ff;
+      transition: all 0.3s;
+      a {
+        color: #1890ff;
+      }
+    }
+
+    &-active {
+      font-weight: 500;
+      background: transparent;
+      border-color: #1890ff;
+
+      a {
+        color: #1890ff;
+      }
+
+      &:focus,
+      &:hover {
+        border-color: #40a9ff;
+      }
+
+      &:focus a,
+      &:hover a {
+        color: #40a9ff;
+      }
+    }
+  }
+
+  &-jump-prev,
+  &-jump-next {
+    outline: 0;
+    .ant-pagination-item-container {
+      position: relative;
+
+      .ant-pagination-item-link-icon {
+        color: #1890ff;
+        letter-spacing: -1px;
+        opacity: 0;
+        transition: all 0.2s;
+        &-svg {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+        }
+      }
+
+      .ant-pagination-item-ellipsis {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        margin: auto;
+        color: fade(#000, 25%);
+        letter-spacing: 2px;
+        text-align: center;
+        text-indent: 0.13em;
+        opacity: 1;
+        transition: all 0.2s;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      .ant-pagination-item-link-icon {
+        opacity: 1;
+      }
+      .ant-pagination-item-ellipsis {
+        opacity: 0;
+      }
+    }
+  }
+
+  &-prev,
+  &-jump-prev,
+  &-jump-next {
+    margin-right: 8px;
+  }
+  &-prev,
+  &-next,
+  &-jump-prev,
+  &-jump-next {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    color: fade(#000, 65%);
+    font-family: Arial;
+    line-height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &-prev,
+  &-next {
+    outline: 0;
+
+    a {
+      color: fade(#000, 65%);
+      user-select: none;
+    }
+
+    &:hover a {
+      border-color: #40a9ff;
+    }
+
+    .ant-pagination-item-link {
+      display: block;
+      height: 100%;
+      font-size: 12px;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid hsv(0, 0, 85%);
+      border-radius: 4px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    &:focus .ant-pagination-item-link,
+    &:hover .ant-pagination-item-link {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+  }
+
+  &-disabled {
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+      a,
+      .ant-pagination-item-link {
+        color: fade(#000, 25%);
+        border-color: hsv(0, 0, 85%);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-slash {
+    margin: 0 10px 0 5px;
+  }
+
+  &-options {
+    display: inline-block;
+    margin-left: 16px;
+    vertical-align: middle;
+
+    &-size-changer {
+      display: inline-block;
+      width: auto;
+      margin-right: 8px;
+    }
+
+    &-quick-jumper {
+      display: inline-block;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: top;
+
+      input {
+        width: 50px;
+        margin: 0 8px;
+
+      }
+    }
+  }
+
+  &-simple &-prev,
+  &-simple &-next {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: top;
+    .ant-pagination-item-link {
+      height: 24px;
+      border: 0;
+      &::after {
+        height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &-simple &-simple-pager {
+    display: inline-block;
+    height: 24px;
+    margin-right: 8px;
+
+    input {
+      box-sizing: border-box;
+      height: 100%;
+      margin-right: 8px;
+      padding: 0 6px;
+      text-align: center;
+      background-color: #fff;
+      border: 1px solid hsv(0, 0, 85%);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s;
+
+      &:hover {
+        border-color: #1890ff;
+      }
+    }
+  }
+
+  &.mini &-total-text,
+  &.mini &-simple-pager {
+    height: 24px;
+    line-height: 24px;
+  }
+
+  &.mini &-item {
+    min-width: 24px;
+    height: 24px;
+    margin: 0;
+    line-height: 22px;
+  }
+
+  &.mini &-item:not(&-item-active) {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  &.mini &-prev,
+  &.mini &-next {
+    min-width: 24px;
+    height: 24px;
+    margin: 0;
+    line-height: 24px;
+  }
+
+  &.mini &-prev &-item-link,
+  &.mini &-next &-item-link {
+    background: transparent;
+    border-color: transparent;
+    &::after {
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &.mini &-jump-prev,
+  &.mini &-jump-next {
+    height: 24px;
+    margin-right: 0;
+    line-height: 24px;
+  }
+
+  &.mini &-options {
+    margin-left: 2px;
+    &-quick-jumper {
+      height: 24px;
+      line-height: 24px;
+
+      input {
+        width: 44px;
+      }
+    }
+  }
+}
+
+select {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-top-width: 1.02px;
+  border-radius: 4px;
+  outline: 0;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  user-select: none;
+  height: 32px;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  padding: 4px 11px;
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  transition: all .3s;
+  width: 50px;
+  margin: 0 8px;
+}
+
+@media only screen and (max-width: 992px) {
+  .ant-pagination-item {
+    &-after-jump-prev,
+    &-before-jump-next {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .ant-pagination-options {
+    display: none;
+  }
+}
