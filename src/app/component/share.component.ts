@@ -65,6 +65,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">12</span>Pagination
                 </a>
             </li>
+            <li>
+                <a routerLink="./collapes">
+                    <span class="badge">13</span>Collapes
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']

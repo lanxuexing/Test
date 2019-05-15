@@ -28,6 +28,8 @@ import { NzAffixModule } from './affix/affix.module';
 import { AffixDemoComponent } from './affix/demo.component';
 import { PaginationDemoComponent } from './pagination/demo.component';
 import { NzPaginationModule } from './pagination/pagination.module';
+import { NzCollapseModule } from './collapse/collapse.module';
+import { CollapesDemoComponent } from './collapse/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -45,6 +47,7 @@ const COMMON = [
     StatisticDemoComponent,
     AffixDemoComponent,
     PaginationDemoComponent,
+    CollapesDemoComponent,
 ];
 
 @NgModule({
@@ -66,6 +69,7 @@ const COMMON = [
         NzStatisticModule.forRoot(),
         NzAffixModule.forRoot(),
         NzPaginationModule.forRoot(),
+        NzCollapseModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

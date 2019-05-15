@@ -14,6 +14,7 @@ import { TabsDemoComponent } from './tabs/demo.component';
 import { StatisticDemoComponent } from './statistic/demo.component';
 import { AffixDemoComponent } from './affix/demo.component';
 import { PaginationDemoComponent } from './pagination/demo.component';
+import { CollapesDemoComponent } from './collapse/demo.component';
 
 const routes: Routes = [
     { path: '', component: ShareComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
     { path: 'statistic', component: StatisticDemoComponent },
     { path: 'affix', component: AffixDemoComponent },
     { path: 'pagination', component: PaginationDemoComponent },
+    { path: 'collapes', component: CollapesDemoComponent },
 ];
 
 @NgModule({
