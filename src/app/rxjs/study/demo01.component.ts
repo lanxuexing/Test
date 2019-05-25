@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, fromEvent } from 'rxjs';
+import { fromEvent } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'app-rxjs-demo01',
     template: `
+        <h3>Rxjs Demo01 To Study!(Rxjs基础部分)</h3>
         <button (click)="emitMessage()">Observable Click</button>
+        <app-back></app-back>
     `,
     styles: [``]
 })

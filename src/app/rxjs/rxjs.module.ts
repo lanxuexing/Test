@@ -5,13 +5,11 @@ import { RxjsHomeComponent } from './rxjs-home.component';
 import { RxjsRoutingModule } from './rxjs.routing';
 import { RxjsService } from './rxjs.service';
 import { ShareReplayComponent } from './share-replay.component';
-import { RxjsDemoComponent } from './study/demo.component';
 import { RxjsDemo01Component } from './study/demo01.component';
 
 const COMMON = [
     RxjsHomeComponent,
     ShareReplayComponent,
-    RxjsDemoComponent,
     RxjsDemo01Component,
 ];
 
