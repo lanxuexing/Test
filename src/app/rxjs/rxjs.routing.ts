@@ -5,11 +5,13 @@ import { RxjsHomeComponent } from './rxjs-home.component';
 import { ShareReplayComponent } from './share-replay.component';
 import { RxjsDemo01Component } from './study/demo01.component';
 import { RxjsDemo02Component } from './study/demo02.component';
+import { RxjsDemo03Component } from './study/demo03.component';
 
 const routes: Routes = [
     { path: '', component: RxjsHomeComponent },
     { path: 'demo01', component: RxjsDemo01Component },
     { path: 'demo02', component: RxjsDemo02Component },
+    { path: 'demo03', component: RxjsDemo03Component },
     { path: 'share-replay', component: ShareReplayComponent }
 ];
 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, of, from, fromEvent, fromEventPattern, empty, never, throwError, interval, timer } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, of, from, fromEvent, fromEventPattern, empty, never, throwError, interval, timer, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -11,7 +11,22 @@ import { take } from 'rxjs/operators';
     `,
     styles: [``]
 })
-export class RxjsDemo02Component implements OnInit {
+export class RxjsDemo02Component implements OnInit, OnDestroy {
+    mySubscription: Subscription;
+    mySubscription2: Subscription;
+    syncSubscription: Subscription;
+    existSubscription: Subscription;
+    promiseSubscription: Subscription;
+    fromEventSubscription: Subscription;
+    fromEventPatternSubscription: Subscription;
+    emptySubscription: Subscription;
+    neverSubscription: Subscription;
+    throwErrorSubscription: Subscription;
+    sourceSubscription: Subscription;
+    intervalSubscription: Subscription;
+    timerSubscription: Subscription;
+    timerFromDateSubscription: Subscription;
+    onceTimerSubscription: Subscription;
 
     constructor() { }
 
@@ -29,7 +44,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // 第一种写法
         console.log('===1====start');
-        const mySubscription = myObservable.subscribe(value => {
+        this.mySubscription = myObservable.subscribe(value => {
             console.log('1. Observable的创建: ', value);
         });
         console.log('===1====end');
@@ -41,12 +56,12 @@ export class RxjsDemo02Component implements OnInit {
             complete: () => { console.log('2. complete'); }
         };
         console.log('===2====start');
-        myObservable.subscribe(innerObserver);
+        this.mySubscription2 = myObservable.subscribe(innerObserver);
         console.log('===2====end');
 
         // 一次同步传递几个值
         const syncObservable = of('Jerry', 'Anna');
-        syncObservable.subscribe({
+        this.syncSubscription = syncObservable.subscribe({
             next: (value) => { console.log('=====一次同步传递值: ', value); },
             error: (error) => { console.log('=====一次同步传递值--Error: ', error); },
             complete: () => { console.log('=====一次同步传递值: complete'); }
@@ -56,7 +71,7 @@ export class RxjsDemo02Component implements OnInit {
         const existArray = ['Jerry', 'Anna', 2016, 2017, '30 days'];
         const existString = '铁人赛';
         const existObservable = from(existArray);
-        existObservable.subscribe({
+        this.existSubscription = existObservable.subscribe({
             next: (value) => { console.log('======从已存在的阵列生成Observable: ', value); },
             error: (error) => { console.log('======从已存在的阵列生成Observable---Error: ', error); },
             complete: () => { console.log('======从已存在的阵列生成Observable: complete'); }
@@ -69,7 +84,7 @@ export class RxjsDemo02Component implements OnInit {
                 resolve('Hello RXJS!');
             }, 3000);
         }));
-        promiseObservable.subscribe({
+        this.promiseSubscription = promiseObservable.subscribe({
             next: (value) => { console.log('======来自Promise的Observable: ', value); },
             error: (error) => { console.log('======来自Promise的Observable---Error: ', error); },
             complete: () => { console.log('======来自Promise的Observable: complete'); }
@@ -77,7 +92,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // FromEvent Observable
         const fromEventObservable = fromEvent(document.getElementById('fromEvent'), 'click');
-        fromEventObservable.subscribe({
+        this.fromEventSubscription = fromEventObservable.subscribe({
             next: (value) => { console.log('======FromEvent Observable: ', value); },
             error: (error) => { console.log('======FromEvent Observable---Error: ', error); },
             complete: () => { console.log('======FromEvent Observable: complete'); }
@@ -89,7 +104,7 @@ export class RxjsDemo02Component implements OnInit {
             (handler) => producer.addEventListener(handler),
             (handler) => producer.removeEventListener(handler)
         );
-        fromEventPatternObservable.subscribe({
+        this.fromEventPatternSubscription = fromEventPatternObservable.subscribe({
             next: (value) => { console.log('======FromEventPattern Observable: ', value); },
             error: (error) => { console.log('======FromEventPattern Observable---Error: ', error); },
             complete: () => { console.log('======FromEventPattern Observable: complete'); }
@@ -98,7 +113,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // empty Observable
         const emptyObservable = empty();
-        emptyObservable.subscribe({
+        this.emptySubscription = emptyObservable.subscribe({
             next: (value) => { console.log('======empty Observable: ', value); },
             error: (error) => { console.log('======empty Observable---Error: ', error); },
             complete: () => { console.log('======empty Observable: complete'); }
@@ -106,7 +121,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // never Observable
         const neverObservable = never();
-        neverObservable.subscribe({
+        this.neverSubscription = neverObservable.subscribe({
             next: (value) => { console.log('======never Observable: ', value); },
             error: (error) => { console.log('======never Observable---Error: ', error); },
             complete: () => { console.log('======never Observable: complete'); }
@@ -114,7 +129,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // throwError Observable
         const throwErrorObservable = throwError('Oop!');
-        throwErrorObservable.subscribe({
+        this.throwErrorSubscription = throwErrorObservable.subscribe({
             next: (value) => { console.log('======throwError Observable: ', value); },
             error: (error) => { console.log('======throwError Observable---Error: ', error); },
             complete: () => { console.log('======throwError Observable: complete'); }
@@ -130,7 +145,7 @@ export class RxjsDemo02Component implements OnInit {
                 }
             }, 1000);
         });
-        source.subscribe({
+        this.sourceSubscription = source.subscribe({
             next: (value) => { console.log('======自己实现一个定时器interval Observable: ', value); },
             error: (error) => { console.log('======自己实现一个定时器interval Observable---Error: ', error); },
             complete: () => { console.log('======自己实现一个定时器interval Observable: complete'); }
@@ -138,7 +153,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // Rxjs版本的interval Observable
         const intervalObservable = interval(1000).pipe(take(4));
-        intervalObservable.subscribe({
+        this.intervalSubscription = intervalObservable.subscribe({
             next: (value) => { console.log('======Rxjs版本的interval Observable: ', value); },
             error: (error) => { console.log('======Rxjs版本的interval Observable---Error: ', error); },
             complete: () => { console.log('======Rxjs版本的interval Observable: complete'); }
@@ -146,7 +161,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // timer Observable延时定时器
         const timerObservable = timer(1000, 5000).pipe(take(3));
-        timerObservable.subscribe({
+        this.timerSubscription = timerObservable.subscribe({
             next: (value) => { console.log('======timer Observable延时定时器: ', value); },
             error: (error) => { console.log('======timer Observable延时定时器---Error: ', error); },
             complete: () => { console.log('======timer Observable延时定时器: complete'); }
@@ -154,7 +169,7 @@ export class RxjsDemo02Component implements OnInit {
 
         // timer Observable延时定时器【指定日期之后开始执行】
         const timerFromDateObservable = timer(new Date('2019-05-26 23:22:00')).pipe(take(1));
-        timerFromDateObservable.subscribe({
+        this.timerFromDateSubscription = timerFromDateObservable.subscribe({
             next: (value) => { console.log('======timer Observable延时定时器【指定日期之后开始执行】: ', value); },
             error: (error) => { console.log('======timer Observable延时定时器【指定日期之后开始执行】---Error: ', error); },
             complete: () => { console.log('======timer Observable延时定时器【指定日期之后开始执行】: complete'); }
@@ -162,11 +177,29 @@ export class RxjsDemo02Component implements OnInit {
 
         // timer Observable延时定时器, 延迟毫秒执行一次之后取消订阅
         const onceTimerObservable = timer(3000);
-        onceTimerObservable.subscribe({
+        this.onceTimerSubscription = onceTimerObservable.subscribe({
             next: (value) => { console.log('======timer Observable延时定时器, 延迟毫秒执行一次之后取消订阅: ', value); },
             error: (error) => { console.log('======timer Observable延时定时器, 延迟毫秒执行一次之后取消订阅---Error: ', error); },
             complete: () => { console.log('======timer Observable延时定时器, 延迟毫秒执行一次之后取消订阅: complete'); }
         });
+    }
+
+    ngOnDestroy() {
+        this.mySubscription.unsubscribe();
+        this.mySubscription2.unsubscribe();
+        this.syncSubscription.unsubscribe();
+        this.existSubscription.unsubscribe();
+        this.promiseSubscription.unsubscribe();
+        this.fromEventSubscription.unsubscribe();
+        this.fromEventPatternSubscription.unsubscribe();
+        this.emptySubscription.unsubscribe();
+        this.neverSubscription.unsubscribe();
+        this.throwErrorSubscription.unsubscribe();
+        this.sourceSubscription.unsubscribe();
+        this.intervalSubscription.unsubscribe();
+        this.timerSubscription.unsubscribe();
+        this.timerFromDateSubscription.unsubscribe();
+        this.onceTimerSubscription.unsubscribe();
     }
 }
 
