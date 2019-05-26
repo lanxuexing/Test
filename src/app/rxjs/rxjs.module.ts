@@ -6,11 +6,13 @@ import { RxjsRoutingModule } from './rxjs.routing';
 import { RxjsService } from './rxjs.service';
 import { ShareReplayComponent } from './share-replay.component';
 import { RxjsDemo01Component } from './study/demo01.component';
+import { RxjsDemo02Component } from './study/demo02.component';
 
 const COMMON = [
     RxjsHomeComponent,
     ShareReplayComponent,
     RxjsDemo01Component,
+    RxjsDemo02Component,
 ];
 
 @NgModule({
