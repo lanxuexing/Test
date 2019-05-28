@@ -113,9 +113,17 @@ export class RxjsDemo03Component implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.originMapSubscription.unsubscribe();
-        this.mapSubscription.unsubscribe();
-        this.mapToSubscription.unsubscribe();
-        this.filterSubscription.unsubscribe();
+        if (this.originMapSubscription) {
+            this.originMapSubscription.unsubscribe();
+        }
+        if (this.mapSubscription) {
+            this.mapSubscription.unsubscribe();
+        }
+        if (this.mapToSubscription) {
+            this.mapToSubscription.unsubscribe();
+        }
+        if (this.filterSubscription) {
+            this.filterSubscription.unsubscribe();
+        }
     }
 }
