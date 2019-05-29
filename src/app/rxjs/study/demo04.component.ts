@@ -133,6 +133,7 @@ export class RxjsDemo04Component implements OnInit, OnDestroy {
 
     concatAllHandler() {
         /**
+         * 必须先等前一个observable完成(complete)，才会继续下一个
          * 例如：Observable里边还是Observable
          * click:       ------------c------------c-----...
          *                  map(e => of(1,2,3))
