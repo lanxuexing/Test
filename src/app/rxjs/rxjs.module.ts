@@ -10,6 +10,7 @@ import { RxjsDemo02Component } from './study/demo02.component';
 import { RxjsDemo03Component } from './study/demo03.component';
 import { RxjsDemo04Component } from './study/demo04.component';
 import { RxjsDemo05Component } from './study/demo05.component';
+import { RxjsDemo06Component } from './study/demo06.component';
 
 const COMMON = [
     RxjsHomeComponent,
@@ -19,6 +20,7 @@ const COMMON = [
     RxjsDemo03Component,
     RxjsDemo04Component,
     RxjsDemo05Component,
+    RxjsDemo06Component,
 ];
 
 @NgModule({
