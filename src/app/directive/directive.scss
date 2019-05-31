@@ -30,15 +30,24 @@ h4 {
   width: 25%;
 }
 .module {
+  color: #515A6E;
   padding: 20px;
   text-align: center;
-  color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #607d8b;
-  border-radius: 2px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px 1px rgb(189, 189, 189);
+  transition-duration: .1s;
+  transition-property: all;
+  justify-content: space-between;
+  cursor: pointer;
 }
 .module:hover {
+  transition-duration: .1s;
+  transition-property: all;
+  left: -3px;
+  top: -3px;
   background-color: #eee;
   cursor: pointer;
   color: #607d8b;
