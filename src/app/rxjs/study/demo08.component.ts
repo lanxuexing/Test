@@ -14,7 +14,7 @@ import { zip, scan, startWith, merge, mapTo, buffer, take, bufferTime, bufferCou
         <button class="mgLeft" (click)="exapleHandler()">实例</button>
         <button class="mgLeft" (click)="addMinusHandler()">AddMinus</button>
         <button class="mgLeft" id="add">Add</button>
-        <button class="mgLeft" id="minus">Minus</button>
+        <button class="mgLeft" id="minus">Minus</button
         <p id="state"></p>
         <app-back></app-back>
     `,
