@@ -70,6 +70,11 @@ import { Component, OnInit } from '@angular/core';
                     <span class="badge">13</span>Collapes
                 </a>
             </li>
+            <li>
+                <a routerLink="./image-zoom">
+                    <span class="badge">14</span>Image-Zoom
+                </a>
+            </li>
         </ul>
     `,
     styleUrls: ['./share.scss']
