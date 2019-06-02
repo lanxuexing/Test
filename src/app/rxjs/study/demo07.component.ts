@@ -9,13 +9,13 @@ import { map, takeUntil, concatAll, throttleTime, debounceTime, filter, withLate
         <div class="scrollContainer">
             <div #anchor>
                 <div class="video" #video>
-                <div class="masker">点击按住视频可拖动</div>
-                <video width="100%" [attr.src]="videoSrc" controls>
-                    <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.ogg" type="video/ogg">
-                    Your browser does not support HTML5 video.
-                </video>
+                    <div class="masker">点击按住视频可拖动</div>
+                    <video width="100%" [attr.src]="videoSrc" controls>
+                        <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.ogg" type="video/ogg">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
             </div>
-        </div>
         </div>
         <app-back></app-back>
     `,
