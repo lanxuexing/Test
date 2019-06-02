@@ -15,6 +15,7 @@ import { StatisticDemoComponent } from './statistic/demo.component';
 import { AffixDemoComponent } from './affix/demo.component';
 import { PaginationDemoComponent } from './pagination/demo.component';
 import { CollapesDemoComponent } from './collapse/demo.component';
+import { ImageZoomDemoComponent } from './image-zoom/demo.component';
 
 const routes: Routes = [
     { path: '', component: ShareComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
     { path: 'affix', component: AffixDemoComponent },
     { path: 'pagination', component: PaginationDemoComponent },
     { path: 'collapes', component: CollapesDemoComponent },
+    { path: 'image-zoom', component: ImageZoomDemoComponent },
 ];
 
 @NgModule({

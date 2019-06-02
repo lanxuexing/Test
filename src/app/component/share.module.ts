@@ -30,6 +30,8 @@ import { PaginationDemoComponent } from './pagination/demo.component';
 import { NzPaginationModule } from './pagination/pagination.module';
 import { NzCollapseModule } from './collapse/collapse.module';
 import { CollapesDemoComponent } from './collapse/demo.component';
+import { ImageZoomModule } from './image-zoom/image-zoom.module';
+import { ImageZoomDemoComponent } from './image-zoom/demo.component';
 
 const COMMON = [
     ShareComponent,
@@ -48,6 +50,7 @@ const COMMON = [
     AffixDemoComponent,
     PaginationDemoComponent,
     CollapesDemoComponent,
+    ImageZoomDemoComponent,
 ];
 
 @NgModule({
@@ -70,6 +73,7 @@ const COMMON = [
         NzAffixModule.forRoot(),
         NzPaginationModule.forRoot(),
         NzCollapseModule.forRoot(),
+        ImageZoomModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],
