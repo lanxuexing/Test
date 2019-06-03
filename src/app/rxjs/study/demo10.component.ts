@@ -3,7 +3,7 @@ import { Subscription, interval } from 'rxjs';
 import { take, throttle, throttleTime, debounceTime, debounce } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-rxjs-demo09',
+    selector: 'app-rxjs-demo10',
     template: `
         <h3>Rxjs Demo10 To Study! -- Operators操作符(debounce, throttleTime, debounceTime)</h3>
         <button class="mgLeft" (click)="debounceHandler()">debounce</button>
