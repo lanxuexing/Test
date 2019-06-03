@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { Subscription, interval, empty, fromEvent } from 'rxjs';
-import { take, delay, delayWhen, map, tap } from 'rxjs/operators';
+import { take, delay, delayWhen, map } from 'rxjs/operators';
 
 @Component({
     selector: 'app-rxjs-demo09',
     template: `
-        <h3>Rxjs Demo08 To Study! -- Operators操作符(delay, delayWhen)</h3>
+        <h3>Rxjs Demo09 To Study! -- Operators操作符(delay, delayWhen)</h3>
         <button class="mgLeft" (click)="delayHandler()">delay</button>
         <button class="mgLeft" (click)="delayWhenHandler()">delayWhen</button>
         <button class="mgLeft" (click)="exampleHandler()">example实例</button>

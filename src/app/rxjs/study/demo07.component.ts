@@ -5,7 +5,7 @@ import { map, takeUntil, concatAll, throttleTime, debounceTime, filter, withLate
 @Component({
     selector: 'app-rxjs-demo07',
     template: `
-        <h3>Rxjs Demo06 To Study! -- 拖拽实例</h3>
+        <h3>Rxjs Demo07 To Study! -- 拖拽实例</h3>
         <div class="scrollContainer">
             <div #anchor>
                 <div class="video" #video>
