@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
             <a class="col-1-4" routerLink="./sticky-thing">
                 <div class="module hero">
                     <h4>Sticky-Thing</h4>
+                    <div class="circle"></div>
                 </div>
             </a>
         </div>
