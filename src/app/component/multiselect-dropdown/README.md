@@ -1,20 +1,20 @@
 # Multiselect Dropdown
 
-Multiselect dropdown component for web applications. Easy to integrate and use. It can be bind to any custom data source.
+Multiselect dropdown component 用于`Web`应用程序，易于集成和使用，它可以绑定到任何自定义数据源。
 
 ## Getting Started
 
 ## Features
 
-- dropdown with single/multiple selction option
-- bind to any custom data source
-- search item with custom placeholder text
-- limit selection
-- select/de-select all items
+- 具有`single/multiple`选择选项的下拉列表
+- 绑定到任何自定义数据源
+- 使用自定义占位符文本搜索项目
+- 限制选择
+- 选择/取消选择所有项目
 
 ### Installation
 
-And then include it in your module
+添加到你的模块
 
 ```ts
 import { MultiSelectDropDownModule } from 'multiselect-dropdown';
@@ -82,39 +82,34 @@ export class AppComponent implements OnInit {
 </multiselect-dropdown>
 ```
 
-### Settings
+### Input
 
-| Setting                        | Type       | Description                                                                                                                                                                                                                                                                                                                                              | Default Value       |
+| 属性                        | 类型       | 描述                                                                                                                                                                                                                                                                                                                                              | 默认值       |
 | :----------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ |
-| singleSelection                | Boolean    | Mode of this component. If set `true` user can select more than one option.                                                                                                                                                                                                                                                                              | false               |
-| placeholder                    | String     | Text to be show in the dropdown, when no items are selected.                                                                                                                                                                                                                                                                                             | 'Select'            |
-| disabled                       | Boolean    | Disable the dropdown                                                                                                                                                                                                                                                                                                                                     | false               |
-| data                           | Array<any> | Array of items from which to select. Should be an array of objects with id and `text` properties. You can also use custom properties. In that case you need to map idField and `textField` properties. As convenience, you may also pass an array of strings, in which case the same string is used for both the ID and the text(no mapping is required) | n/a                 |
-| idField                        | String     | map id field in case of custom array of object                                                                                                                                                                                                                                                                                                           | 'id'                |
-| textField                      | String     | map text field in case of custom array of object                                                                                                                                                                                                                                                                                                         | 'text'              |
-| enableCheckAll                 | Boolean    | Enable the option to select all items in list                                                                                                                                                                                                                                                                                                            | false               |
-| selectAllText                  | String     | Text to display as the label of select all option                                                                                                                                                                                                                                                                                                        | Select All          |
-| unSelectAllText                | String     | Text to display as the label of unSelect option                                                                                                                                                                                                                                                                                                          | UnSelect All        |
-| allowSearchFilter              | Boolean    | Enable filter option for the list.                                                                                                                                                                                                                                                                                                                       | false               |
-| searchPlaceholderText          | String     | custom search placeholder                                                                                                                                                                                                                                                                                                                                | Search              |
-| clearSearchFilter              | Boolean    | clear search filter on dropdown close                                                                                                                                                                                                                                                                                                                    | true                |
-| maxHeight                      | Number     | Set maximum height of the dropdown list in px.                                                                                                                                                                                                                                                                                                           | 197                 |
-| itemsShowLimit                 | Number     | Limit the number of items to show in the input field. If not set will show all selected.                                                                                                                                                                                                                                                                 | All                 |
-| limitSelection                 | Number     | Limit the selection of number of items from the dropdown list. Once the limit is reached, all unselected items gets disabled.                                                                                                                                                                                                                            | none                |
-| searchPlaceholderText          | String     | Custom text for the search placeholder text. Default value would be 'Search'                                                                                                                                                                                                                                                                             | 'Search'            |
-| noDataAvailablePlaceholderText | String     | Custom text when no data is available.                                                                                                                                                                                                                                                                                                                   | 'No data available' |
-| closeDropDownOnSelection       | Boolean    | Closes the dropdown when item is selected. applicable only in cas of single selection                                                                                                                                                                                                                                                                    | false               |
-| defaultOpen                    | Boolean    | open state of dropdown                                                                                                                                                                                                                                                                                                                                   | false               |
+| singleSelection                | Boolean    | 组件的模式，如果设置`true`用户可以选择多个选项                                                                                                                                                                                                                                                                              | false                |
+| placeholder                    | String     | 未选择任何项目时，在下拉列表中显示的文本。                                                                                                                                                                                                                                                                                             | 'Select'            |
+| disabled                       | Boolean    | 禁用下拉列表                                                                                                                                                                                                                                                                                                                                     | false               |
+| data                           | Array<any> | 要从中选择的项目数组。应该是具有`id`和`text`属性的对象数组。您还可以使用自定义属性。在这种情况下，您需要映射`idField`和`textField`属性。为方便起见，您还可以传递一个字符串数组，在这种情况下，`ID`和文本都使用相同的字符串（不需要映射） | n/a                 |
+| idField                        | String     | 在自定义对象数组的情况下映射`id`字段                                                                                                                                                                                                                                                                                                           | 'id'                |
+| textField                      | String     | 在自定义对象数组的情况下映射文本字段                                                                                                                                                                                                                                                                                                         | 'text'              |
+| enableCheckAll                 | Boolean    | 启用该选项以选择列表中的所有项目                                                                                                                                                                                                                                                                                                            | false               |
+| selectAllText                  | String     | 要显示为`select all`选项标签的文本                                                                                                                                                                                                                                                                                                        | Select All          |
+| unSelectAllText                | String     | 要显示为`unSelect`选项标签的文本 option                                                                                                                                                                                                                                                                                                          | UnSelect All        |
+| allowSearchFilter              | Boolean    | 为列表启用过滤器选项。                                                                                                                                                                                                                                                                                                                           | false
+| searchPlaceholderText          | String     | 自定义搜索占位符                                                                                                                                                                                                                                                                                                                                | Search              |
+| clearSearchFilter              | Boolean    | 清除搜索过滤器下拉关闭                                                                                                                                                                                                                                                                                                                           | true                |
+| maxHeight                      | Number     | 设置下拉列表的最大高度(单位：px).                                                                                                                                                                                                                                                                                                           | 197                 |
+| itemsShowLimit                 | Number     | 限制要在输入字段中显示的项目数。如果未设置将显示所有选中。                                                                                                                                                                                                                                                                 | All                 |
+| limitSelection                 | Number     | 限制从下拉列表中选择的项目数。达到限制后，将禁用所有未选择的项目。                                                                                                                                                                                                                            | none                |
+| searchPlaceholderText          | String     | 搜索占位符文本的自定义文本。默认值为`Search`                                                                                                                                                                                                                                                                             | 'Search'            |
+| noDataAvailablePlaceholderText | String     | 没有数据时的自定义文本。                                                                                                                                                                                                                                                                                                                   | 'No data available' |
+| closeDropDownOnSelection       | Boolean    | 选中项目时关闭下拉列表。仅适用于单一选择的`cas`                                                                                                                                                                                                                                                                    | false               |
+| defaultOpen                    | Boolean    | 打开状态下拉列表                                                                                                                                                                                                                                                                                                                                   | false               |
 
-### Callback Methods
+### Output
 
-- `onSelect` - Return the selected item when an item is checked.
-  Example : (onSelect)="onItemSelect($event)"
-- `onSelectAll` - Return the all items.
-  Example : (onSelectAll)="onSelectAll($event)".
-- `onDeSelect` - Return the unselected item when an item is unchecked.
-  Example : (onDeSelect)="onItemDeSelect($event)"
-- `onFilterChange` - Return the key press.
-  Example : (onFilterChange)="onFilterChange($event)"
-- `onDropDownClose`-
-  Example : (onDropDownClose)="onDropDownClose()"
+- `onSelect` - 选中项目时返回所选项目。示例：(onSelect)="onItemSelect($event)"
+- `onSelectAll` - 退回所有物品。示例：(onSelectAll)="onSelectAll($event)".
+- `onDeSelect` - 取消选中项目时返回未选择的项目。示例：(onDeSelect)="onItemDeSelect($event)"
+- `onFilterChange` - 返回按键。示例：(onFilterChange)="onFilterChange($event)"
+- `onDropDownClose`- 示例：(onDropDownClose)="onDropDownClose()"
