@@ -7,7 +7,7 @@ import { IDropdownSettings } from './multiselect.model';
         <div class="container">
             <multiselect-dropdown
                 name="city"
-                [placeholder]="'Select Development Framework'"
+                [placeholder]="'请选择...'"
                 [data]="cities"
                 [(ngModel)]="selectedItems"
                 [disabled]="disabled"
@@ -32,7 +32,18 @@ export class MultiselectDropdownDemoComponent implements OnInit {
     showAll = true;
     selectedItems: Array<any> = [];
     cities: Array<any> = [];
-    dropdownSettings: IDropdownSettings = {};
+    dropdownSettings: IDropdownSettings = {
+        singleSelection: false,
+        defaultOpen: false,
+        idField: 'item_id',
+        textField: 'item_text',
+        selectAllText: '全选',
+        unSelectAllText: '取消全选',
+        searchPlaceholderText: '请输入检索关键字...',
+        enableCheckAll: this.showAll,
+        itemsShowLimit: 3,
+        allowSearchFilter: this.ShowFilter
+    };
 
     constructor() { }
 
@@ -51,18 +62,6 @@ export class MultiselectDropdownDemoComponent implements OnInit {
             { item_id: 11, item_text: 'React Native' },
             { item_id: 12, item_text: 'Fuchsia' }
         ];
-        this.dropdownSettings = {
-            singleSelection: false,
-            defaultOpen: false,
-            idField: 'item_id',
-            textField: 'item_text',
-            selectAllText: 'Select All',
-            unSelectAllText: 'UnSelect All',
-            searchPlaceholderText: 'search',
-            enableCheckAll: this.showAll,
-            itemsShowLimit: 3,
-            allowSearchFilter: this.ShowFilter
-        };
         this.selectedItems = [{ item_id: 4, item_text: 'Java' }, { item_id: 6, item_text: 'Android' }];
     }
 

@@ -68,6 +68,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
 
   @Input()
   public set settings(value: IDropdownSettings) {
+    console.log('value', value);
     if (value) {
       this._settings = Object.assign(this.defaultSettings, value);
     } else {
