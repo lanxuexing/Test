@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
-import { take, throttle, throttleTime } from 'rxjs/operators';
+import { take, throttle, throttleTime, debounceTime, debounce } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-rxjs-demo09',
+    selector: 'app-rxjs-demo10',
     template: `
-        <h3>Rxjs Demo10 To Study! -- Operators操作符(throttleTime, debounceTime)</h3>
+        <h3>Rxjs Demo10 To Study! -- Operators操作符(debounce, throttleTime, debounceTime)</h3>
+        <button class="mgLeft" (click)="debounceHandler()">debounce</button>
         <button class="mgLeft" (click)="debounceTimeHandler()">debounceTime</button>
         <button class="mgLeft" (click)="throttleTimeHandler()">throttleTime</button>
         <app-back></app-back>
@@ -19,6 +20,7 @@ import { take, throttle, throttleTime } from 'rxjs/operators';
 export class RxjsDemo10Component implements OnInit, OnDestroy {
     debounceTimeSubscription: Subscription;
     throttleTimeSubscription: Subscription;
+    debounceSubscription: Subscription;
 
     constructor() { }
 
@@ -30,7 +32,29 @@ export class RxjsDemo10Component implements OnInit, OnDestroy {
         // (1234)| 代表一个同步Observable结束
     }
 
-    debounceTimeHandler() {}
+    debounceHandler() {
+        const source1 = interval(300).pipe(take(5));
+        const source2 = interval(1000);
+        this.debounceSubscription = source1.pipe(
+            debounce(_ => source2)
+        ).subscribe({
+            next: (value) => { console.log('=====debounce操作符: ', value); },
+            error: (err) => { console.log('=====debounce操作符: Error: ', err); },
+            complete: () => { console.log('=====debounce操作符: complete!'); }
+        });
+    }
+
+    debounceTimeHandler() {
+        const debounceTimeObservable = interval(300).pipe(
+            take(5),
+            debounceTime(1000)
+        );
+        this.debounceTimeSubscription = debounceTimeObservable.subscribe({
+            next: (value) => { console.log('=====debounceTime操作符: ', value); },
+            error: (err) => { console.log('=====debounceTime操作符: Error: ', err); },
+            complete: () => { console.log('=====debounceTime操作符: complete!'); }
+        });
+    }
 
     throttleTimeHandler() {
         const throttleObservable = interval(300).pipe(
@@ -45,6 +69,9 @@ export class RxjsDemo10Component implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        if (this.debounceSubscription) {
+            this.debounceSubscription.unsubscribe();
+        }
         if (this.debounceTimeSubscription) {
             this.debounceTimeSubscription.unsubscribe();
         }

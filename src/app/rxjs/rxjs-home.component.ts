@@ -60,6 +60,11 @@ import { Component, OnInit } from '@angular/core';
                     <h4>Rxjs基础Demo10</h4>
                 </div>
             </a>
+            <a class="col-1-4" routerLink="./demo11">
+                <div class="module hero">
+                    <h4>Rxjs基础Demo11</h4>
+                </div>
+            </a>
         </div>
     `,
     styleUrls: ['./rxjs.scss']
