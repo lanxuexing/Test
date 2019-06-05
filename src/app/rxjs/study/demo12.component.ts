@@ -5,10 +5,10 @@ import { zip, map, catchError, take, retry, retryWhen, delay, repeat, startWith,
 @Component({
     selector: 'app-rxjs-demo12',
     template: `
-        <h3>Rxjs Demo12 To Study! -- Operators操作符(catch, retry, retryWhen, repeat)</h3>
-        <button class="mgLeft" (click)="catchFromOfHandler()">catch【of继续】</button>
-        <button class="mgLeft" (click)="catchFromEmptyHandler()">catch【empty直接结束】</button>
-        <button class="mgLeft" (click)="catchFromResetHandler()">catch【empty重试】</button>
+        <h3>Rxjs Demo12 To Study! -- Operators操作符(catchError, retry, retryWhen, repeat)</h3>
+        <button class="mgLeft" (click)="catchErrorFromOfHandler()">catchError【of继续】</button>
+        <button class="mgLeft" (click)="catchErrorFromEmptyHandler()">catchError【empty直接结束】</button>
+        <button class="mgLeft" (click)="catchErrorFromResetHandler()">catchError【empty重试】</button>
         <button class="mgLeft" (click)="retryHandler()">retry</button>
         <button class="mgLeft" (click)="retryWhenHandler()">retryWhen</button>
         <button class="mgLeft" (click)="repeatHandler()">repeat</button>
@@ -22,7 +22,7 @@ import { zip, map, catchError, take, retry, retryWhen, delay, repeat, startWith,
     `]
 })
 export class RxjsDemo12Component implements OnInit, OnDestroy {
-    catchSubscription: Subscription;
+    catchErrorSubscription: Subscription;
     retrySubscription: Subscription;
     retryWhenSubscription: Subscription;
     repeatWhenSubscription: Subscription;
@@ -38,7 +38,7 @@ export class RxjsDemo12Component implements OnInit, OnDestroy {
         // (1234)| 代表一个同步Observable结束
     }
 
-    catchFromOfHandler() {
+    catchErrorFromOfHandler() {
         /**
          * catch 可以回传一个observable 来送出新的值
          * 例如： from(['a', 'b', 'c', 'd', 2]).pipe(zip(interval(500), (x, y) => x)).pipe(map(x => x.toUpperCase(), catch(e => of('h'))));
@@ -61,14 +61,14 @@ export class RxjsDemo12Component implements OnInit, OnDestroy {
             map((x: string) => x.toUpperCase()),
             catchError(err => of('h'))
         );
-        this.catchSubscription = catchObservable.subscribe({
+        this.catchErrorSubscription = catchObservable.subscribe({
             next: (value) => { console.log('=====catch操作符: ', value); },
             error: (err) => { console.log('=====catch操作符: Error: ', err); },
             complete: () => { console.log('=====catch操作符: complete!'); }
         });
     }
 
-    catchFromEmptyHandler() {
+    catchErrorFromEmptyHandler() {
         /**
          * catch 可以回传一个observable 来送出新的值
          * 例如： from(['a', 'b', 'c', 'd', 2]).pipe(zip(interval(500), (x, y) => x)).pipe(map(x => x.toUpperCase(), catch(e => empty())));
@@ -91,14 +91,14 @@ export class RxjsDemo12Component implements OnInit, OnDestroy {
             map((x: string) => x.toUpperCase()),
             catchError(err => empty())
         );
-        this.catchSubscription = catchObservable.subscribe({
+        this.catchErrorSubscription = catchObservable.subscribe({
             next: (value) => { console.log('=====catch操作符: ', value); },
             error: (err) => { console.log('=====catch操作符: Error: ', err); },
             complete: () => { console.log('=====catch操作符: complete!'); }
         });
     }
 
-    catchFromResetHandler() {
+    catchErrorFromResetHandler() {
         /**
          * catch 可以回传一个observable 来送出新的值
          * 例如： from(['a', 'b', 'c', 'd', 2]).pipe(zip(interval(500), (x, y) => x)).pipe(map(x => x.toUpperCase(), catch((e, obs) => obs)));
@@ -123,7 +123,7 @@ export class RxjsDemo12Component implements OnInit, OnDestroy {
             catchError((err, obs) => obs),
             take(5)
         );
-        this.catchSubscription = catchObservable.subscribe({
+        this.catchErrorSubscription = catchObservable.subscribe({
             next: (value) => { console.log('=====catch操作符: ', value); },
             error: (err) => { console.log('=====catch操作符: Error: ', err); },
             complete: () => { console.log('=====catch操作符: complete!'); }
@@ -223,8 +223,8 @@ export class RxjsDemo12Component implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this.catchSubscription) {
-            this.catchSubscription.unsubscribe();
+        if (this.catchErrorSubscription) {
+            this.catchErrorSubscription.unsubscribe();
         }
         if (this.retrySubscription) {
             this.retrySubscription.unsubscribe();
