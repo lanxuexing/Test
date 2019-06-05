@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { fromEvent, interval, of, Subscription } from 'rxjs';
-import { map, concatAll, take, switchMap, mergeAll } from 'rxjs/operators';
+import { fromEvent, interval, Subscription } from 'rxjs';
+import { map, concatAll, take, switchAll, mergeAll } from 'rxjs/operators';
 
 @Component({
     selector: 'app-rxjs-demo13',
     template: `
-        <h3>Rxjs Demo13 To Study! -- Operators操作符(switchMap, mergeAll, concatAll)</h3>
-        <button class="mgLeft" (click)="switchMapHandler()">switchMap</button>
+        <h3>Rxjs Demo13 To Study! -- Operators操作符(switchAll, mergeAll, concatAll)</h3>
+        <button class="mgLeft" (click)="switchAllHandler()">switchAll</button>
         <button class="mgLeft" (click)="mergeAllHandler()">mergeAll</button>
         <button class="mgLeft" (click)="mergeAllFromParamsHandler()">mergeAll【带参数】</button>
         <button class="mgLeft" (click)="concatAllHandler()">concatAll</button>
@@ -21,7 +21,7 @@ import { map, concatAll, take, switchMap, mergeAll } from 'rxjs/operators';
 })
 export class RxjsDemo13Component implements OnInit, OnDestroy {
     concatAllSubscription: Subscription;
-    switchMapSubscription: Subscription;
+    switchAllSubscription: Subscription;
     mergeAllSubscription: Subscription;
 
     constructor() { }
@@ -39,7 +39,7 @@ export class RxjsDemo13Component implements OnInit, OnDestroy {
          */
     }
 
-    switchMapHandler() {
+    switchAllHandler() {
         /**
          * switch最重要的就是他会在新的observable送出后直接处理新的observable不管前一个observable是否完成，
          * 每当有新的observable送出就会直接把旧的observable退订(unsubscribe)，永远只处理最新的observable!
@@ -55,14 +55,15 @@ export class RxjsDemo13Component implements OnInit, OnDestroy {
          * example:        -----------------0----1----2----0----1--..
          */
         const source = fromEvent(document.getElementById('btn'), 'click').pipe(
-            map(e => interval(1000)),
-            take(10),
-            switchMap((obs, index) => {console.log(index); return obs; })
+            map(e => interval(1000).pipe(
+                take(10),
+            )),
+            switchAll()
         );
-        this.switchMapSubscription = source.subscribe({
-            next: (value) => { console.log('=====switchMap操作符: ', value); },
-            error: (err) => { console.log('=====switchMap操作符: Error: ', err); },
-            complete: () => { console.log('=====switchMap操作符: complete!'); }
+        this.switchAllSubscription = source.subscribe({
+            next: (value) => { console.log('=====switchAll操作符: ', value); },
+            error: (err) => { console.log('=====switchAll操作符: Error: ', err); },
+            complete: () => { console.log('=====switchAll操作符: complete!'); }
         });
     }
 
@@ -150,8 +151,8 @@ export class RxjsDemo13Component implements OnInit, OnDestroy {
         if (this.concatAllSubscription) {
             this.concatAllSubscription.unsubscribe();
         }
-        if (this.switchMapSubscription) {
-            this.switchMapSubscription.unsubscribe();
+        if (this.switchAllSubscription) {
+            this.switchAllSubscription.unsubscribe();
         }
         if (this.mergeAllSubscription) {
             this.mergeAllSubscription.unsubscribe();
