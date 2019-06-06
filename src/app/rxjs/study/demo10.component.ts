@@ -22,7 +22,13 @@ export class RxjsDemo10Component implements OnInit, OnDestroy {
     throttleTimeSubscription: Subscription;
     debounceSubscription: Subscription;
 
-    constructor() { }
+    constructor() {
+        /**
+         * 使用说明：
+         * debounce 是我妈一直催我做某件事，我就一直赌气不去做，直到我妈不再催我一段时间后，我就自动去做。简而言之debounce 就是一直触发就不做，等到静止一段时间后去做
+         * throttle 是我跟我妈拿钱，但我妈一个月只会给我一次钱，这一个月中间我跟我妈要多少次钱都没有用(我妈不会给我)。简而言之throttle 就是频率限制。
+         */
+    }
 
     ngOnInit(): void {
         // 图谱
