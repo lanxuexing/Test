@@ -64,7 +64,7 @@ export class RxjsDemo08Component implements OnInit, OnDestroy {
 
     bufferHandler() {
         /**
-         * 缓冲阵列
+         * 缓冲阵列(把把一段时间内送出的元素拆分到阵列中: Observable<T> => Observable<Array<T>>)
          * buffer 是个大家族buffer bufferCount bufferTime bufferToggle bufferWhen
          * buffer 要传入一个observable(source2)，它会把原本的observable (source)送出的元素缓存在阵列中，等到传入的observable(source2) 送出元素时，就会触发把缓存的元素送出。
          * source1:       --0--1--2--3--4--5--6--7--..
