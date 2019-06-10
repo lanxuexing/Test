@@ -7,11 +7,15 @@ import { StickyThingDirective } from './sticky-thing/sticky-thing.directive';
 import { DirectiveComponent } from './directive.component';
 import { StickyThingDemoComponent } from './sticky-thing/demo.component';
 import { CoreModule } from '../core/core.module';
+import { EllipsisDirective } from './ellipsis/ellipsis.directive';
+import { EllipsisDemoComponent } from './ellipsis/demo.component';
 
 const COMMON = [
   DirectiveComponent,
   StickyThingDirective,
   StickyThingDemoComponent,
+  EllipsisDirective,
+  EllipsisDemoComponent,
 ];
 
 @NgModule({
