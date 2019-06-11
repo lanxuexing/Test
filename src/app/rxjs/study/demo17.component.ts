@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
     selector: 'app-rxjs-demo17',
     template: `
         <h3>Rxjs Demo17 To Study! -- Subject的深入</h3>
-        <button class="mgLeft" (click)="normalHandler()">正常Observable</button>
+        <button (click)="normalHandler()">正常Observable</button>
         <button class="mgLeft" (click)="multicastHandler()">组播Observable</button>
         <app-back></app-back>
     `,
@@ -32,31 +32,31 @@ export class RxjsDemo17Component implements OnInit, OnDestroy {
 
     normalHandler() {
         const source = interval(1000).pipe(take(4));
-        const observableA = {
-            next: (value) => { console.log('=====observableA: ', value); },
-            error: (err) => { console.log('=====observableA: Error: ', err); },
-            complete: () => { console.log('=====observableA: complete!'); }
+        const observerA = {
+            next: (value) => { console.log('=====observerA: ', value); },
+            error: (err) => { console.log('=====observerA: Error: ', err); },
+            complete: () => { console.log('=====observerA: complete!'); }
         };
-        const observableB = {
-            next: (value) => { console.log('=====observableB: ', value); },
-            error: (err) => { console.log('=====observableB: Error: ', err); },
-            complete: () => { console.log('=====observableB: complete!'); }
+        const observerB = {
+            next: (value) => { console.log('=====observerB: ', value); },
+            error: (err) => { console.log('=====observerB: Error: ', err); },
+            complete: () => { console.log('=====observerB: complete!'); }
         };
-        this.normalASubscription = source.subscribe(observableA);
-        this.normalBSubscription = source.subscribe(observableB);
+        this.normalASubscription = source.subscribe(observerA);
+        this.normalBSubscription = source.subscribe(observerB);
     }
 
     multicastHandler() {
         const source = interval(1000).pipe(take(4));
-        const observableA = {
-            next: (value) => { console.log('=====observableA: ', value); },
-            error: (err) => { console.log('=====observableA: Error: ', err); },
-            complete: () => { console.log('=====observableA: complete!'); }
+        const observerA = {
+            next: (value) => { console.log('=====observerA: ', value); },
+            error: (err) => { console.log('=====observerA: Error: ', err); },
+            complete: () => { console.log('=====observerA: complete!'); }
         };
-        const observableB = {
-            next: (value) => { console.log('=====observableB: ', value); },
-            error: (err) => { console.log('=====observableB: Error: ', err); },
-            complete: () => { console.log('=====observableB: complete!'); }
+        const observerB = {
+            next: (value) => { console.log('=====observerB: ', value); },
+            error: (err) => { console.log('=====observerB: Error: ', err); },
+            complete: () => { console.log('=====observerB: complete!'); }
         };
         const subject = {
             observables: [] = [],
@@ -85,17 +85,17 @@ export class RxjsDemo17Component implements OnInit, OnDestroy {
         };
 
         // 第一种写法
-        subject.addObservable(observableA);
+        subject.addObservable(observerA);
         source.subscribe(subject);
         setTimeout(() => {
-            subject.addObservable(observableB);
+            subject.addObservable(observerB);
         }, 1000);
 
         // 第二种写法
-        subject.subscribe(observableA);
+        subject.subscribe(observerA);
         source.subscribe(subject);
         setTimeout(() => {
-            subject.subscribe(observableB);
+            subject.subscribe(observerB);
         }, 1000);
     }
 

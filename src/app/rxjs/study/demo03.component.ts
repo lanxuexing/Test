@@ -6,7 +6,7 @@ import { map, take, mapTo, filter } from 'rxjs/operators';
     selector: 'app-rxjs-demo03',
     template: `
         <h3>Rxjs Demo03 To Study! -- Operators操作符(map、mapTo、filter)</h3>
-        <button class="mgLeft" (click)="originMapHandler()">origin map</button>
+        <button (click)="originMapHandler()">origin map</button>
         <button class="mgLeft" (click)="mapHandler()">map</button>
         <button class="mgLeft" (click)="mapToHandler()">mapTo</button>
         <button class="mgLeft" (click)="filterHandler()">mapTo</button>

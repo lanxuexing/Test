@@ -6,7 +6,7 @@ import { take, combineLatest, zip, withLatestFrom } from 'rxjs/operators';
     selector: 'app-rxjs-demo06',
     template: `
         <h3>Rxjs Demo06 To Study! -- Operators操作符(combineLatest, withLatestFrom, zip)</h3>
-        <button class="mgLeft" (click)="combineLatestHandler()">combineLatest</button>
+        <button (click)="combineLatestHandler()">combineLatest</button>
         <button class="mgLeft" (click)="withLatestFromHandler()">withLatestFrom</button>
         <button class="mgLeft" (click)="zipHandler()">zip</button>
         <app-back></app-back>

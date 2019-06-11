@@ -6,7 +6,7 @@ import { take, throttle, throttleTime, debounceTime, debounce } from 'rxjs/opera
     selector: 'app-rxjs-demo10',
     template: `
         <h3>Rxjs Demo10 To Study! -- Operators操作符(debounce, throttleTime, debounceTime)</h3>
-        <button class="mgLeft" (click)="debounceHandler()">debounce</button>
+        <button (click)="debounceHandler()">debounce</button>
         <button class="mgLeft" (click)="debounceTimeHandler()">debounceTime</button>
         <button class="mgLeft" (click)="throttleTimeHandler()">throttleTime</button>
         <app-back></app-back>

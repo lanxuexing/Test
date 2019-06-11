@@ -6,7 +6,7 @@ import { concatMap, take, switchMap, mergeMap } from 'rxjs/operators';
     selector: 'app-rxjs-demo14',
     template: `
         <h3>Rxjs Demo14 To Study! -- Operators操作符(switchMap, mergeMap, concatMap)</h3>
-        <button class="mgLeft" (click)="switchMapHandler()">switchMap</button>
+        <button (click)="switchMapHandler()">switchMap</button>
         <button class="mgLeft" (click)="mergeMapHandler()">mergeMap</button>
         <button class="mgLeft" (click)="concatMapHandler()">concatMap</button>
         <button class="mgLeft" (click)="concatMapFromNetMapHandler()">concatMap【网络请求】</button>

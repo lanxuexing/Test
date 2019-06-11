@@ -6,7 +6,7 @@ import { count, groupBy, map, mergeAll, reduce, switchAll, take, window, windowT
     selector: 'app-rxjs-demo16',
     template: `
         <h3>Rxjs Demo16 To Study! -- Operators操作符(window, windowToggle, groupBy)</h3>
-        <button class="mgLeft" (click)="windowHandler()">window</button>
+        <button (click)="windowHandler()">window</button>
         <button class="mgLeft" (click)="exampleHandler()">统计Example</button>
         <button class="mgLeft" (click)="windowToggleHandler()">windowToggle</button>
         <button class="mgLeft" (click)="groupByHandler()">groupBy</button>

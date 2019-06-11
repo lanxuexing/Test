@@ -6,7 +6,7 @@ import { map, concatAll, take, switchAll, mergeAll } from 'rxjs/operators';
     selector: 'app-rxjs-demo13',
     template: `
         <h3>Rxjs Demo13 To Study! -- Operators操作符(switchAll, mergeAll, concatAll)</h3>
-        <button class="mgLeft" (click)="switchAllHandler()">switchAll</button>
+        <button (click)="switchAllHandler()">switchAll</button>
         <button class="mgLeft" (click)="mergeAllHandler()">mergeAll</button>
         <button class="mgLeft" (click)="mergeAllFromParamsHandler()">mergeAll【带参数】</button>
         <button class="mgLeft" (click)="concatAllHandler()">concatAll</button>

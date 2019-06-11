@@ -6,7 +6,7 @@ import { skip, take, takeLast, last, concat, startWith, merge } from 'rxjs/opera
     selector: 'app-rxjs-demo05',
     template: `
         <h3>Rxjs Demo05 To Study! -- Operators操作符(skip, takeLast, last, concat, startWith, merge)</h3>
-        <button class="mgLeft" (click)="skipHandler()">skip</button>
+        <button (click)="skipHandler()">skip</button>
         <button class="mgLeft" (click)="takeLastHandler()">takeLast</button>
         <button class="mgLeft" (click)="lastHandler()">last</button>
         <button class="mgLeft" (click)="concatHandler()">concat</button>

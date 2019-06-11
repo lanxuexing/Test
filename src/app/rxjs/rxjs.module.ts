@@ -23,6 +23,7 @@ import { RxjsDemo15Component } from './study/demo15.component';
 import { FormsModule } from '@angular/forms';
 import { RxjsDemo16Component } from './study/demo16.component';
 import { RxjsDemo17Component } from './study/demo17.component';
+import { RxjsDemo18Component } from './study/demo18.component';
 
 const COMMON = [
     RxjsHomeComponent,
@@ -44,6 +45,7 @@ const COMMON = [
     RxjsDemo15Component,
     RxjsDemo16Component,
     RxjsDemo17Component,
+    RxjsDemo18Component,
 ];
 
 @NgModule({

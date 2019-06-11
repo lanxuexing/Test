@@ -6,7 +6,7 @@ import { zip, map, catchError, take, retry, retryWhen, delay, repeat, startWith,
     selector: 'app-rxjs-demo12',
     template: `
         <h3>Rxjs Demo12 To Study! -- Operators操作符(catchError, retry, retryWhen, repeat)</h3>
-        <button class="mgLeft" (click)="catchErrorFromOfHandler()">catchError【of继续】</button>
+        <button (click)="catchErrorFromOfHandler()">catchError【of继续】</button>
         <button class="mgLeft" (click)="catchErrorFromEmptyHandler()">catchError【empty直接结束】</button>
         <button class="mgLeft" (click)="catchErrorFromResetHandler()">catchError【empty重试】</button>
         <button class="mgLeft" (click)="retryHandler()">retry</button>

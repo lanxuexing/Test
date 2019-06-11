@@ -6,7 +6,7 @@ import { zip, scan, startWith, merge, mapTo, buffer, take, bufferTime, bufferCou
     selector: 'app-rxjs-demo08',
     template: `
         <h3>Rxjs Demo08 To Study! -- Operators操作符(scan, buffer, bufferTime, bufferCount)</h3>
-        <button class="mgLeft" (click)="scanHandler()">scan</button>
+        <button (click)="scanHandler()">scan</button>
         <button class="mgLeft" (click)="bufferHandler()">buffer</button>
         <button class="mgLeft" (click)="bufferTimeHandler()">bufferTime</button>
         <button class="mgLeft" (click)="bufferCountHandler()">bufferCount</button>

@@ -6,7 +6,7 @@ import { distinct, distinctUntilChanged, zip } from 'rxjs/operators';
     selector: 'app-rxjs-demo11',
     template: `
         <h3>Rxjs Demo11 To Study! -- Operators操作符(distinct, distinctUntilChanged)</h3>
-        <button class="mgLeft" (click)="distinctHandler()">distinct</button>
+        <button (click)="distinctHandler()">distinct</button>
         <button class="mgLeft" (click)="distinctOfObjectHandler()">distinct【object】</button>
         <button class="mgLeft" (click)="distinctOfFlushesHandler()">distinct【flushes】</button>
         <button class="mgLeft" (click)="distinctUntilChangedHandler()">distinctUntilChanged</button>

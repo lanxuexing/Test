@@ -6,7 +6,7 @@ import { take, first, takeUntil, map, concatAll } from 'rxjs/operators';
     selector: 'app-rxjs-demo04',
     template: `
         <h3>Rxjs Demo04 To Study! -- Operators操作符(take, first, takeUntil, concatAll)</h3>
-        <button class="mgLeft" (click)="takeHandler()">take</button>
+        <button (click)="takeHandler()">take</button>
         <button class="mgLeft" (click)="firstHandler()">first</button>
         <button class="mgLeft" (click)="takeUntilHandler()">takeUntil</button>
         <button class="mgLeft" (click)="concatAllHandler()">concatAll</button>
