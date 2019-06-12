@@ -224,21 +224,51 @@ export class RxjsDemo02Component implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.mySubscription.unsubscribe();
-        this.mySubscription2.unsubscribe();
-        this.syncSubscription.unsubscribe();
-        this.existSubscription.unsubscribe();
-        this.promiseSubscription.unsubscribe();
-        this.fromEventSubscription.unsubscribe();
-        this.fromEventPatternSubscription.unsubscribe();
-        this.emptySubscription.unsubscribe();
-        this.neverSubscription.unsubscribe();
-        this.throwErrorSubscription.unsubscribe();
-        this.sourceSubscription.unsubscribe();
-        this.intervalSubscription.unsubscribe();
-        this.timerSubscription.unsubscribe();
-        this.timerFromDateSubscription.unsubscribe();
-        this.onceTimerSubscription.unsubscribe();
+        if (this.mySubscription) {
+            this.mySubscription.unsubscribe();
+        }
+        if (this.mySubscription2) {
+            this.mySubscription2.unsubscribe();
+        }
+        if (this.syncSubscription) {
+            this.syncSubscription.unsubscribe();
+        }
+        if (this.existSubscription) {
+            this.existSubscription.unsubscribe();
+        }
+        if (this.promiseSubscription) {
+            this.promiseSubscription.unsubscribe();
+        }
+        if (this.fromEventSubscription) {
+            this.fromEventSubscription.unsubscribe();
+        }
+        if (this.fromEventPatternSubscription) {
+            this.fromEventPatternSubscription.unsubscribe();
+        }
+        if (this.emptySubscription) {
+            this.emptySubscription.unsubscribe();
+        }
+        if (this.neverSubscription) {
+            this.neverSubscription.unsubscribe();
+        }
+        if (this.throwErrorSubscription) {
+            this.throwErrorSubscription.unsubscribe();
+        }
+        if (this.sourceSubscription) {
+            this.sourceSubscription.unsubscribe();
+        }
+        if (this.intervalSubscription) {
+            this.intervalSubscription.unsubscribe();
+        }
+        if (this.timerSubscription) {
+            this.timerSubscription.unsubscribe();
+        }
+        if (this.timerFromDateSubscription) {
+            this.timerFromDateSubscription.unsubscribe();
+        }
+        if (this.onceTimerSubscription) {
+            this.onceTimerSubscription.unsubscribe();
+        }
     }
 }
 
