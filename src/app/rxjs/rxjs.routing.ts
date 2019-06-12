@@ -24,6 +24,7 @@ import { RxjsDemo18Component } from './study/demo18.component';
 import { RxjsDemo19Component } from './study/demo19.component';
 import { RxjsDemo20Component } from './study/demo20.component';
 import { RxjsDemo21Component } from './study/demo21.component';
+import { RxjsDemo22Component } from './study/demo22.component';
 
 const routes: Routes = [
     { path: '', component: RxjsHomeComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
     { path: 'demo19', component: RxjsDemo19Component },
     { path: 'demo20', component: RxjsDemo20Component },
     { path: 'demo21', component: RxjsDemo21Component },
+    { path: 'demo22', component: RxjsDemo22Component },
     { path: 'share-replay', component: ShareReplayComponent }
 ];
 
