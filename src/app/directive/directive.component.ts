@@ -23,6 +23,12 @@ import { Component, OnInit } from '@angular/core';
                     <div class="circle"></div>
                 </div>
             </a>
+            <a class="col-1-4" routerLink="./auto-size">
+                <div class="module hero">
+                    <h4>AutoSize</h4>
+                    <div class="circle"></div>
+                </div>
+            </a>
         </div>
     `,
     styleUrls: ['./directive.scss']

@@ -11,12 +11,15 @@ import { ClickOutsidesDemoComponent } from './click-outsides/demo.component';
 import { StickyThingModule } from './sticky-thing/sticky-thing.module';
 import { EllipsisModule } from './ellipsis/ellipsis.module';
 import { ClickOutsidesModule } from './click-outsides/click-outsides.module';
+import { AutosizeModule } from './autosize/autosize.module';
+import { AutoSizeDemoComponent } from './autosize/demo.component';
 
 const COMMON = [
   DirectiveComponent,
   StickyThingDemoComponent,
   EllipsisDemoComponent,
   ClickOutsidesDemoComponent,
+  AutoSizeDemoComponent,
 ];
 
 @NgModule({
@@ -28,6 +31,7 @@ const COMMON = [
     StickyThingModule.forRoot(),
     EllipsisModule.forRoot(),
     ClickOutsidesModule.forRoot(),
+    AutosizeModule.forRoot(),
   ],
   declarations: [...COMMON],
   providers: [DirectiveService],
