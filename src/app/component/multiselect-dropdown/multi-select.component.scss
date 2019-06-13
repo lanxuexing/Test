@@ -20,6 +20,8 @@ $disable-background-color: #eceeef;
     cursor: pointer;
     background-image: none;
     border-radius: 4px;
+    outline-width: 1px;
+    outline-color: #40a9ff;
     .selected-item {
       border: 1px solid #DBDBDB;
       margin-right: 4px;
@@ -76,14 +78,14 @@ $disable-background-color: #eceeef;
 
 .dropdown-list {
   position: absolute;
-  padding-top: 6px;
   width: 100%;
   z-index: 9999;
   border: 1px solid #ccc;
   border-radius: 3px;
   background: #fff;
-  margin-top: 10px;
+  margin-top: 4px;
   box-shadow: 0px 1px 5px #959595;
+  transition: all .3s cubic-bezier(.645,.045,.355,1);
   ul {
     padding: 0px;
     list-style: none;
