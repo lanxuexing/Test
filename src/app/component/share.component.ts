@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <h2>Share Components</h2>
         <div class="flex">
+            <!-- 第一列 -->
             <ul class="heroes">
                 <li>
                     <a routerLink="./from">
@@ -79,6 +80,14 @@ import { Component, OnInit } from '@angular/core';
                 <li>
                     <a routerLink="./modal">
                         <span class="badge">15</span>Modal
+                    </a>
+                </li>
+            </ul>
+            <!-- 第二列 -->
+            <ul class="heroes">
+                <li>
+                    <a routerLink="./image-slider">
+                        <span class="badge">15</span>Image-Slider
                     </a>
                 </li>
             </ul>
