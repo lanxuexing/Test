@@ -32,6 +32,8 @@ import { NzCollapseModule } from './collapse/collapse.module';
 import { CollapesDemoComponent } from './collapse/demo.component';
 import { ImageZoomModule } from './image-zoom/image-zoom.module';
 import { ImageZoomDemoComponent } from './image-zoom/demo.component';
+import { ModalDemoComponent } from './modal/demo.component';
+import { ModalModule } from './modal/modal.module';
 
 const COMMON = [
     ShareComponent,
@@ -51,6 +53,7 @@ const COMMON = [
     PaginationDemoComponent,
     CollapesDemoComponent,
     ImageZoomDemoComponent,
+    ModalDemoComponent,
 ];
 
 @NgModule({
@@ -74,6 +77,7 @@ const COMMON = [
         NzPaginationModule.forRoot(),
         NzCollapseModule.forRoot(),
         ImageZoomModule.forRoot(),
+        ModalModule.forRoot(),
     ],
     exports: [...COMMON],
     providers: [ShareService],

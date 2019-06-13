@@ -76,6 +76,11 @@ import { Component, OnInit } from '@angular/core';
                         <span class="badge">14</span>Image-Zoom
                     </a>
                 </li>
+                <li>
+                    <a routerLink="./modal">
+                        <span class="badge">15</span>Modal
+                    </a>
+                </li>
             </ul>
         </div>
     `,
