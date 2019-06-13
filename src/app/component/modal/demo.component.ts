@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-modal-demo',
     template: `
         <h3>Modal Use Case</h3>
-        <button type="button" (click)="modalRoot1.show()">Open modal</button>
-        <button type="button" class="mgLeft" (click)="modalRoot2.show()">Open nested modal</button>
-        <button type="button" class="mgLeft" (click)="modalRoot4.show()">Open base modal</button>
+        <button type="button" (click)="modalRoot1.show();isShowPanel = false;">Open modal</button>
+        <button type="button" class="mgLeft" (click)="modalRoot2.show();isShowPanel = false;">Open nested modal</button>
+        <button type="button" class="mgLeft" (click)="modalRoot4.show();isShowPanel = false;">Open base modal</button>
         <button type="button" class="mgLeft" (click)="isShowPanel = true;">Open panel modal</button>
         <!-- Open modal -->
         <app-modal #modalRoot1
