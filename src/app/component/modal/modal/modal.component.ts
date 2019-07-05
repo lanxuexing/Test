@@ -24,10 +24,10 @@ export class ModalComponent implements OnInit, AfterViewChecked {
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter();
 
   // {static: false} 适配 Angular 8
-  @ViewChild('modalRoot', {static: false}) modalRoot: ElementRef;
-  @ViewChild('modalBody', {static: false}) modalBody: ElementRef;
-  @ViewChild('modalHeader', {static: false}) modalHeader: ElementRef;
-  @ViewChild('modalFooter', {static: false}) modalFooter: ElementRef;
+  @ViewChild('modalRoot') modalRoot: ElementRef;
+  @ViewChild('modalBody') modalBody: ElementRef;
+  @ViewChild('modalHeader') modalHeader: ElementRef;
+  @ViewChild('modalFooter') modalFooter: ElementRef;
 
   @HostBinding('class.app-modal') cssClass = true;
 
