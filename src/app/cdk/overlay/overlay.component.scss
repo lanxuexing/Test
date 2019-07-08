@@ -1,0 +1,46 @@
+.float-menu {
+    position: fixed !important;
+    right: 15px;
+    bottom: 15px;
+    z-index: 2;
+}
+
+.float-menu-no {
+    position: fixed !important;
+    right: 90px;
+    bottom: 15px;
+    z-index: 2;
+}
+
+.edit {
+    right: 180px;
+}
+
+.display {
+    right: 270px;
+}
+
+.create {
+    right: 360px;
+}
+
+.panel {
+    right: 450px;
+}
+  
+.fab-menu-panel {
+    border: 1px solid black;
+    background-color: white;
+}
+  
+.fab-menu-panel .mat-nav-list {
+    padding-top: 0px;
+}
+
+.template-overlay-pane {
+    margin: 0;
+    padding: 10px;
+    color: #FFF;
+    border-radius: 5px;
+    background-color: #FC6720;
+}

@@ -10,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
                     <h4>Accessibility</h4>
                 </div>
             </a>
+            <a class="col-1-4" routerLink="./overlay">
+                <div class="module hero">
+                    <h4>Overlay</h4>
+                </div>
+            </a>
         </div>
     `,
     styleUrls: ['./cdk.scss']
