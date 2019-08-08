@@ -29,6 +29,12 @@ import { Component, OnInit } from '@angular/core';
                     <div class="circle"></div>
                 </div>
             </a>
+            <a class="col-1-4" routerLink="./tooltip-window">
+                <div class="module hero">
+                    <h4>Tooltip-Window</h4>
+                    <div class="circle"></div>
+                </div>
+            </a>
         </div>
     `,
     styleUrls: ['./directive.scss']

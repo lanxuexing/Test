@@ -13,6 +13,8 @@ import { EllipsisModule } from './ellipsis/ellipsis.module';
 import { ClickOutsidesModule } from './click-outsides/click-outsides.module';
 import { AutosizeModule } from './autosize/autosize.module';
 import { AutoSizeDemoComponent } from './autosize/demo.component';
+import { TooltipWindowDemoComponent } from './tooltip-window/demo.component';
+import { TooltipWindowComponent, TooltipWindowDirective } from './tooltip-window/tooltip-window.directive';
 
 const COMMON = [
   DirectiveComponent,
@@ -20,6 +22,9 @@ const COMMON = [
   EllipsisDemoComponent,
   ClickOutsidesDemoComponent,
   AutoSizeDemoComponent,
+  TooltipWindowDemoComponent,
+  TooltipWindowComponent,
+  TooltipWindowDirective
 ];
 
 @NgModule({
@@ -31,9 +36,10 @@ const COMMON = [
     StickyThingModule.forRoot(),
     EllipsisModule.forRoot(),
     ClickOutsidesModule.forRoot(),
-    AutosizeModule.forRoot(),
+    AutosizeModule.forRoot()
   ],
   declarations: [...COMMON],
+  entryComponents: [TooltipWindowComponent],
   providers: [DirectiveService],
   exports: [...COMMON]
 })
