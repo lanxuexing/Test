@@ -36,6 +36,8 @@ import { ModalDemoComponent } from './modal/demo.component';
 import { ModalModule } from './modal/modal.module';
 import { ImageSliderDemoComponent } from './image-slider/demo.component';
 import { ImageSliderModule } from './image-slider/image-slider.module';
+import { EditorDemoComponent } from './editor/demo.component';
+import { CKEditorModule } from 'ng2-ckeditor';
 
 const COMMON = [
     ShareComponent,
@@ -57,6 +59,7 @@ const COMMON = [
     ImageZoomDemoComponent,
     ModalDemoComponent,
     ImageSliderDemoComponent,
+    EditorDemoComponent,
 ];
 
 @NgModule({
@@ -82,6 +85,7 @@ const COMMON = [
         ImageZoomModule.forRoot(),
         ModalModule.forRoot(),
         ImageSliderModule.forRoot(),
+        CKEditorModule,
     ],
     exports: [...COMMON],
     providers: [ShareService],

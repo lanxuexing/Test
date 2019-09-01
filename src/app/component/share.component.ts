@@ -90,6 +90,11 @@ import { Component, OnInit } from '@angular/core';
                         <span class="badge">15</span>Image-Slider
                     </a>
                 </li>
+                <li>
+                    <a routerLink="./editor">
+                        <span class="badge">15</span>Editor
+                    </a>
+                </li>
             </ul>
         </div>
     `,
