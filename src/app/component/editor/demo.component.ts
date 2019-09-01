@@ -34,6 +34,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   `]
 })
 export class EditorDemoComponent implements OnInit {
+  // 文档地址： https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/angular.html
   name = 'ng2-ckeditor';
   ckeConfig: any;
   mycontent: string;
