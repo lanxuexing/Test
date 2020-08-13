@@ -1,10 +1,10 @@
 {
-  "name": "test",
+  "name": "angular2study",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=8100",
-    "build": "ng build",
+    "build": "ng build --prod --output-path docs --base-href /angular2study/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
