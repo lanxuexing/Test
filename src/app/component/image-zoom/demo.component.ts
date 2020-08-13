@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
                         </td>
                         <td>
                             <image-zoom [thumbImage]="'assets/image/thumb.jpg'"
-                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="hover"
+                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="'hover'"
                                 [magnification]="1">
                                 <div class="ngxImageZoomContainer" style="width: 650px; height: 401px;"><img
                                         class="ngxImageZoomThumbnail" height="100%" width="100%"
@@ -38,7 +38,7 @@ import { Component, OnInit } from '@angular/core';
                         </td>
                         <td>
                             <image-zoom [thumbImage]="'assets/image/thumb.jpg'"
-                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="click"
+                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="'click'"
                                 [magnification]="1" [enableScrollZoom]="true">
                                 <div class="ngxImageZoomContainer" style="width: 650px; height: 401px;"><img
                                         class="ngxImageZoomThumbnail" height="100%" width="100%"
@@ -63,7 +63,7 @@ import { Component, OnInit } from '@angular/core';
                         </td>
                         <td>
                             <image-zoom [thumbImage]="'assets/image/thumb.jpg'"
-                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="click"
+                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="'click'"
                                 [magnification]="1" [enableLens]="true"
                                 [lensWidth]="150" [lensHeight]="150"
                                 [circularLens]="true">
@@ -89,7 +89,7 @@ import { Component, OnInit } from '@angular/core';
                         </td>
                         <td>
                             <image-zoom [thumbImage]="'assets/image/thumb.jpg'"
-                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="toggle"
+                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="'toggle'"
                                 [magnification]="0.5">
                                 <div class="ngxImageZoomContainer" style="width: 650px; height: 401px;"><img
                                         class="ngxImageZoomThumbnail" height="100%" width="100%"
@@ -115,7 +115,7 @@ import { Component, OnInit } from '@angular/core';
                         </td>
                         <td>
                             <image-zoom [thumbImage]="'assets/image/thumb.jpg'"
-                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="hover-freeze"
+                                [fullImage]="'assets/image/fullres.jpg'" [zoomMode]="'hover-freeze'"
                                 [magnification]="1" [enableLens]="true"
                                 [lensWidth]="163" [lensHeight]="100"
                                 [enableScrollZoom]="true">
@@ -150,7 +150,7 @@ import { Component, OnInit } from '@angular/core';
                         <td>
                             <image-zoom enablelens="true" enablescrollzoom="true" zoommode="hover"
                                 [thumbImage]="'assets/image/thumb.jpg'" [fullImage]="'assets/image/fullres.jpg'"
-                                [zoomMode]="hover" [enableLens]="true"
+                                [zoomMode]="'hover'" [enableLens]="true"
                                 [enableScrollZoom]="true">
                                 <div class="ngxImageZoomContainer" style="width: 650px; height: 401px;"><img
                                         class="ngxImageZoomThumbnail" height="100%" width="100%"

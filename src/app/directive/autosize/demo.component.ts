@@ -34,6 +34,7 @@ import { Component, OnInit } from '@angular/core';
     `]
 })
 export class AutoSizeDemoComponent implements OnInit {
+    text: string;
     constructor() { }
 
     ngOnInit(): void { }

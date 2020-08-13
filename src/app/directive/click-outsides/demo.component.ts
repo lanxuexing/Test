@@ -40,29 +40,29 @@ import { Component, OnInit } from '@angular/core';
     `]
 })
 export class ClickOutsidesDemoComponent implements OnInit {
-    private countInside = 0;
-    private countOutside = 0;
-    private attachOutsideOnClick = false;
-    private enabled = true;
+    public countInside = 0;
+    public countOutside = 0;
+    public attachOutsideOnClick = false;
+    public enabled = true;
 
     constructor() { }
 
     ngOnInit(): void { }
 
-    private _toggleAttachOutsideOnClick() {
+    public _toggleAttachOutsideOnClick() {
         this.attachOutsideOnClick = !this.attachOutsideOnClick;
     }
 
-    private _toggleEnabled() {
+    public _toggleEnabled() {
         this.enabled = !this.enabled;
     }
 
-    private onClick(e: Event) {
+    public onClick(e: Event) {
         console.log('Clicked inside:', e);
         this.countInside++;
     }
 
-    private onClickedOutside(e: Event) {
+    public onClickedOutside(e: Event) {
         console.log('Clicked outside:', e);
         this.countOutside++;
     }

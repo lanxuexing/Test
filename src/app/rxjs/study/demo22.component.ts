@@ -7,7 +7,7 @@ import { observeOn } from 'rxjs/operators';
     template: `
         <h3>Rxjs Demo22 To Study! -- Scheduler基本概念</h3>
         <button (click)="asyncObservableHandler()">异步Observable</button>
-        <button class="mgLeft" (click)="observableTwoHandler()">实例二Observable</button>
+        <button class="mgLeft">实例二Observable</button>
         <app-back></app-back>
     `,
     styles: [`

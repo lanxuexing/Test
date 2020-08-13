@@ -118,14 +118,14 @@ import { Component, OnInit } from '@angular/core';
         .mdTop {
             margin-top: 10px;
         }
-        gridStyle = {
-            width: '25%',
-            textAlign: 'center'
-        };
     `]
 })
 export class CardDemoComponent implements OnInit {
     loading = true;
+    gridStyle = {
+        width: '25%',
+        textAlign: 'center'
+    };
 
     constructor() { }
 
